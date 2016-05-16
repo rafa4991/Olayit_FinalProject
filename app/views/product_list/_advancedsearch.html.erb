@@ -1,11 +1,11 @@
 
         <div id="filter-panel" class="collapse filter-panel">
             <div class="panel panel-default">
-                <div class="panel-body">
+                <div class="panel-body" action="/ProductList" method="get">
                     <form class="form-inline" role="form">
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="pref-perpage">Items per page:</label>
-                            <select id="pref-perpage" class="form-control">
+                            <select name="filter" id="pref-perpage" class="form-control">
                                 <option value="3">3</option>
                                 <option value="6">6</option>
                                 <option value="9">9</option>
@@ -21,16 +21,21 @@
                         </div> <!-- form group [rows] -->
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="pref-search">Search:</label>
-                            <input type="text" class="form-control input-sm" id="pref-search">
+                            
+                            <input name="advancedSearch" type="text" class="form-control input-sm" id="pref-search">
+                            
                         </div><!-- form group [search] -->
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="pref-orderby">Order by:</label>
-                            <select id="pref-orderby" class="form-control">
+                            <select name="sort" id="pref-orderby" class="form-control">
+                                <option value="name">Product Name</option>
                                 <option>Manufacturer</option>
-                                <option>Product Name</option>
-                                <option>Price</option>
+                                <option value="price">Price</option>
+                                <option value-"description">Description</option>
                             </select>                                
                         </div> 
+
+                        <input name="order" type="hidden" value"asc"> 
 
                         <!-- form group [order by] --> 
                         <!--
@@ -48,5 +53,5 @@
             </div>
         </div>    
         <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter-panel">
-            <span class="glyphicon glyphicon-cog"></span> Advanced Search
+            <span class="glyphicon glyphicon-cog"></span> Advanced Options
         </button>

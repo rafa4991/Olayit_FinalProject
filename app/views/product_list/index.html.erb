@@ -28,18 +28,14 @@
             	<!--PRODUCT CAROUSEL (start)-->
             	<!--<%= render "carousel" %>-->
             	<!--PRODUCT CAROUSEL (end)-->
-
-            	<div class="row">
-
-            		<!--PRODUCT LIST (start)-->
-            		<%= render "listproduct" %>
-            		<!--PRODUCT LIST (end)-->
-
-                    
-
-
-                </div>
-
+                
+                <% if @products.length>0 %>
+                	<!--PRODUCT LIST (start)-->
+                	<%= render "listproduct" %>
+                	<!--PRODUCT LIST (end)-->
+                <% else %>
+                    <p class="lead">There are no results for "<%= @searchinput %>"</p>
+                <% end %>
             </div>
 
         </div>

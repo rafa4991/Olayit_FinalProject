@@ -1,13 +1,19 @@
 <!--STYLIST SEARCH BAR (start)-->
-<div id="imaginary_container"> 
-    <div class="input-group stylish-input-group">
-        <input type="text" class="form-control"  placeholder="Search" >
-        <span class="input-group-addon">
-            <button type="submit">
-                <span class="glyphicon glyphicon-search"></span>
-            </button>  
-        </span>
-    </div>
-</div>
+<!--<%= form_tag :action => 'index', method: 'get' do %>-->
+<%= form_tag('/ProductList', :method => :get)%>
+	<div id="imaginary_container"> 
+	    <div class="input-group stylish-input-group">
+	    	<%= text_field_tag :search , "", class: 'form-control', placeholder: 'Search' %>
+	        <!--<input type="text" class="form-control"  placeholder="Search" >-->
+	        <span class="input-group-addon">
+	        	
+	            <button name="submit" type="submit">
+	                <span class="glyphicon glyphicon-search"></span>
+	            </button>
+
+	        </span>
+	    </div>
+	</div>
+<% end %>
 
 <!--STYLIST SEARCH BAR (end)-->
