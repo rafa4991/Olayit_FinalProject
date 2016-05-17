@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :products
+  root 'product_list#index'
+
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
+
+  get 'pages/home'
 
   
   # The priority is based upon order of creation: first created -> highest priority.

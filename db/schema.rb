@@ -42,7 +42,9 @@ ActiveRecord::Schema.define(version: 20160511233318) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.string   "vendorID"
     t.string   "name"
+    t.string   "type"
     t.float    "price"
     t.text     "description"
     t.string   "image"
