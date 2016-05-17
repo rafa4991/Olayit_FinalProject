@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'vendor_users/new'
+
+  get 'clinical_users/new'
+
   get 'sessions/new'
 
   get 'userpaths/index'
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
 
 
   get 'signup'  => 'users#new'
+  get 'signupVendor'  => 'users#newVendor'
+  get 'signupClinic'  => 'users#newClinic'
   resources :users
 
   get    'login'   => 'sessions#new'

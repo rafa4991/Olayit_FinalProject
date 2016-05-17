@@ -4,6 +4,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def newVendor
+    @user = User.new
+  end
+
+  def newClinic
+    @user = User.new
+  end
+
   def show
     @user = User.find(params[:id])  
   end
