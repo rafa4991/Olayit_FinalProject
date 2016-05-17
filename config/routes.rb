@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
