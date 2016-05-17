@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'userpaths/index'
+
+  get 'userpaths/index'
+
   get 'users/new'
 
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
+
+
+  get 'signup'  => 'users#new'
+  resources :users
+
 
   
   # The priority is based upon order of creation: first created -> highest priority.
@@ -12,6 +21,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'product_list#index'
+  root 'userpaths#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
