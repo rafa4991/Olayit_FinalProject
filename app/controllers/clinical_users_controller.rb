@@ -1,4 +1,32 @@
 class ClinicalUsersController < ApplicationController
+   
+
   def new
+    @clinicaluser = ClinicalUser.new
   end
+
+ 
+
+  def show
+    @clinicaluser = ClinicalUser.find(params[:id])  
+  end
+
+  def create
+    @clinicaluser = ClinicalUser.new(clinicaluser_params)
+    if @clinicaluser.save
+      log_in @clinicaluser
+      flash[:success] = "Welcome OlayIT!"
+      redirect_to @clinicaluser
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+    def clinicaluser_params
+      params.require(:clinical_user).permit(:name, :email, :password,
+                              )
+    end
 end
+

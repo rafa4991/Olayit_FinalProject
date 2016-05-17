@@ -18,9 +18,11 @@ Rails.application.routes.draw do
 
 
   get 'signup'  => 'users#new'
-  get 'signupVendor'  => 'users#newVendor'
-  get 'signupClinic'  => 'users#newClinic'
+  get 'signupVendor'  => 'vendor_users#new'
+  get 'signupClinic'  => 'clinical_users#new'
   resources :users
+  resources :clinical_users
+  resources :vendor_users
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

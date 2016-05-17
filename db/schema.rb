@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517042917) do
+ActiveRecord::Schema.define(version: 20160517090032) do
 
   create_table "clinical_organizations", force: :cascade do |t|
     t.string   "name"
@@ -30,9 +30,12 @@ ActiveRecord::Schema.define(version: 20160517042917) do
     t.string   "role"
     t.string   "telephone"
     t.integer  "organizationID"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
+
+  add_index "clinical_users", ["email"], name: "index_clinical_users_on_email", unique: true
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "clinicalID"
@@ -87,9 +90,12 @@ ActiveRecord::Schema.define(version: 20160517042917) do
     t.string   "email"
     t.string   "role"
     t.string   "telephone"
-    t.integer  "organizationID"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "organizaionID"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
+
+  add_index "vendor_users", ["email"], name: "index_vendor_users_on_email", unique: true
 
 end
