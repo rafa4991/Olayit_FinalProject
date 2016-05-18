@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
   resources :reviews
   resources :products
   root 'product_list#index'
-=======
+
   get 'home/index'
 
   get 'home/new'
->>>>>>> c05c73638edc15d6bd419249a1972ac67fa9e777
 
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
-
   get 'pages/home'
-
 
   
   
