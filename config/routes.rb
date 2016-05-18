@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :reviews
   resources :products
   root 'product_list#index'
 
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   get 'ProductList' => 'product_list#index'
 
   get 'pages/home'
+
 
   
   # The priority is based upon order of creation: first created -> highest priority.
