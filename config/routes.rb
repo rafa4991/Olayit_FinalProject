@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
+  get 'home/new'
+
   get 'welcome/productpage'
 
-  get 'ProductList' => 'product_list#index'
+  get 'product_list' => 'product_list#index'
 
+  
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
