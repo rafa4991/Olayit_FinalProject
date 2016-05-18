@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'welcome/productpage'
 
-  get 'product_list' => 'product_list#index'
+  get 'ProductList' => 'product_list#index'
 
   
   
