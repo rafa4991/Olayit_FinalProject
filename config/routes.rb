@@ -1,26 +1,61 @@
 Rails.application.routes.draw do
 
+
+  get 'vendor_users/new'
+
+  get 'clinical_users/new'
+
+  get 'sessions/new'
+
+  get 'userpaths/index'
+
+  get 'userpaths/index'
+
+  get 'users/new'
+
   resources :reviews
   resources :products
-  root 'product_list#index'
+  #root 'product_list#index'
 
   get 'home/index'
 
   get 'home/new'
+
 
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
   get 'pages/home'
 
+
+  get 'signup'  => 'users#new'
+  get 'signupVendor'  => 'vendor_users#new'
+  get 'signupClinic'  => 'clinical_users#new'
   
+
+  get    'login'   => 'sessions#newVendor'
+  post   'login'   => 'sessions#createvendor'
+
+  get    'loginVendor'   => 'sessions#newVendor'
+  post   'loginVendor'   => 'sessions#createvendor'
   
+  get    'loginHGO'   => 'sessions#newHGO'
+  post   'loginHGO'   => 'sessions#createHGO'
+
+  delete 'logout'  => 'sessions#destroy'
+
+
+  
+  resources :users
+  resources :clinical_users
+  resources :vendor_users
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   #root 'product_list#index'
+  root 'userpaths#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
