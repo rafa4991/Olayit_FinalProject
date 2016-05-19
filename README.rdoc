@@ -1,4 +1,7 @@
 == README
+TODO: Raul removed two this code from the header. Does not work with this branch.
+<li><%= #link_to 'Products', product_list_path %></li>
+<li><%= #link_to 'Home', home_index_path %></li>
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
