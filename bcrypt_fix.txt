@@ -1,0 +1,4 @@
+
+#For bundle Fix from terminal run:
+bundle install
+rake db:migrate RAILS_ENV=development
