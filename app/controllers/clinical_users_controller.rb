@@ -25,8 +25,8 @@ class ClinicalUsersController < ApplicationController
   private
 
     def clinicaluser_params
-      params.require(:clinical_user).permit(:name, :email, :password,
-                              )
+      params.require(:clinical_user).permit(:name, :ein,:username,:organizaionID,:email, :password,:password_confirmation)
+                          
     end
 end
 

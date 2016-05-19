@@ -1,7 +1,7 @@
 class VendorUsersController < ApplicationController
   def new
     @vendor = VendorUser.new
-    @user = User.new
+    
   end
 
   def show
@@ -22,6 +22,6 @@ class VendorUsersController < ApplicationController
   private
 
     def user_params
-      params.require(:vendor_user).permit(:name, :email, :password)
+      params.require(:vendor_user).permit(:name, :ein,:username,:role,:telephone,:email, :password,:password_confirmation)
     end
 end

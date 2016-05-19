@@ -31,17 +31,24 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   get 'signupVendor'  => 'vendor_users#new'
   get 'signupClinic'  => 'clinical_users#new'
-  resources :users
-  resources :clinical_users
-  resources :vendor_users
+  
 
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
+  get    'login'   => 'sessions#newVendor'
+  post   'login'   => 'sessions#createvendor'
+
+  get    'loginVendor'   => 'sessions#newVendor'
+  post   'loginVendor'   => 'sessions#createvendor'
+  
+  get    'loginHGO'   => 'sessions#newHGO'
+  post   'loginHGO'   => 'sessions#createHGO'
+
   delete 'logout'  => 'sessions#destroy'
 
 
   
-  
+  resources :users
+  resources :clinical_users
+  resources :vendor_users
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
