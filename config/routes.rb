@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'vendor_users/new'
 
   get 'clinical_users/new'
@@ -11,10 +12,20 @@ Rails.application.routes.draw do
   get 'userpaths/index'
 
   get 'users/new'
+=======
+  resources :reviews
+  resources :products
+  root 'product_list#index'
+
+  get 'home/index'
+
+  get 'home/new'
+>>>>>>> master
 
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
+  get 'pages/home'
 
 
   get 'signup'  => 'users#new'
@@ -29,6 +40,8 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
 
+  
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
