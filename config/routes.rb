@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :products
-  root 'product_list#index'
+  #root 'product_list#index'
 
   get 'home/index'
 
