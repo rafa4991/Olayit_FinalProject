@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
+
   get 'vendor_users/new'
 
   get 'clinical_users/new'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'userpaths/index'
 
   get 'users/new'
-=======
+
   resources :reviews
   resources :products
   root 'product_list#index'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   get 'home/new'
->>>>>>> master
+
 
   get 'welcome/productpage'
 
