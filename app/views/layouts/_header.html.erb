@@ -1,25 +1,71 @@
-
 <!-- Healthcare Organization -->
 
-<div id = "header">
-	<div id = "logo">
-		<a href = "../home/index">
-		<img src = "../../assets/logo_white" alt= "logo" id = "imgLogo" >  
-		</a>
-	</div>
-	
-	<div id = "search">
-	Healthcare Organization
-	</div>
+<body>
+    <div id="header">
+        <div id="logo">
+            <a href="../home/index"><img alt="logo" id="imgLogo" src=
+            "../../assets/logo_white"></a>
+        </div>
 
-</div>
-<div id = "menu"> 
-	<ul id = "orgMenu">
-		<li><a href="#">Profile</a></li>
-		<li><a href="#">Chat</a></li>
-		<li><a href="#">Favorites</a></li>
-		
-</div>
 
-<br><br>
+        <div id="search">
+            Healthcare Organization
+        </div>
+    </div>
 
+
+    <div id="menu">
+        <ul id="orgMenu">
+            <li>
+                <a href="#">Chat</a>
+            </li>
+
+
+            <li>
+                <a href="#">Favorites</a>
+            </li>
+
+
+            <li>
+                <a href="/ProductList">Products</a>
+            </li>
+
+
+            <li><%= link_to 'Home', home_index_path %>
+            </li>
+
+
+            <li>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <%if logged_in? %><a class="dropdown-toggle"
+                        data-toggle="dropdown" href="#">Account <b class=
+                        "caret"></b></a> <a href="#"></a>
+
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Profile", current_user %>
+                            </li>
+
+
+                            <li><%= link_to "Settings", '#' %>
+                            </li>
+
+
+                            <li class="divider">
+                            </li>
+
+
+                            <li>
+                            <%= link_to "Log out", logout_path, method: "delete" %>
+                            </li>
+                        </ul>
+                    </li>
+                    <%else %>
+
+                    <li><%= link_to "Log in", login_path %>
+                    </li>
+                    <%end %>
+                </ul>
+            </li>
+        </ul>
+    </div>
