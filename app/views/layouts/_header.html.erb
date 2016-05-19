@@ -2,7 +2,9 @@
 
 <div id = "header">
 	<div id = "logo">
-	OlayIT
+		<a href = "../home/index">
+		<img src = "../../assets/logo_white" alt= "logo" id = "imgLogo" >  
+		</a>
 	</div>
 	
 	<div id = "search">
@@ -15,10 +17,9 @@
 		<li><a href="#">Profile</a></li>
 		<li><a href="#">Chat</a></li>
 		<li><a href="#">Favorites</a></li>
-		<li><a href="/ProductList">Products</a></li>
-		
+		<li><%= link_to 'Products', product_list_path %></li>
 		<li><%= link_to 'Home', home_index_path %></li>
-
 </div>
 
+<br><br>
 
