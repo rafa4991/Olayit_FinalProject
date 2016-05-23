@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @reviews = Review.all
   end
 
   # GET /products/1
@@ -80,6 +81,7 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+      @reviews = Review.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
