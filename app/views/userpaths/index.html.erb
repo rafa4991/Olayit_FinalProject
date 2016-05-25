@@ -2,19 +2,29 @@
 
 <div id = "login_content">
 <br><br><br>
-<table id = "table_login" >
-	<tr><td><%= link_to "Login as a Healthcare Provider!",  loginHGO_path  %></td>
-		<td><%= link_to "Login as a Vendor!", loginVendor_path %></td>
+
+<table id = "table_login">
+	<tr>
+		<th><h3>Healthcare Organizations</h3></th>
+		<th><h3>Healthcare Vendors</h3></th>
 	</tr>
-	<tr><td><%= link_to "Sign up as a Healthcare Provider!",  signupClinic_path  %></td>
-		<td><%= link_to "Sign up as a Vendor!", signupVendor_path %></td>
+	<tr>
+		<td><%= link_to "Login as a Healthcare Provider!",  loginHGO_path  %><br><br>
+			<%= link_to "Sign up as a Healthcare Provider!",  signupClinic_path  %>
+		</td>
+		<td><%= link_to "Login as a Vendor!", loginVendor_path %><br><br>
+			<%= link_to "Sign up as a Vendor!", signupVendor_path %>
+		</td>
 	</tr>
 </table>
 
-	<br><br><br>
-	<br><br><br>
-</div><!-- End 'table_content' div -->
 
 
+
+
+	<br><br><br>
+	<br><br><br>
+
+</div>
 
 
