@@ -3,7 +3,7 @@ class ProductListController < ApplicationController
 
 	def index
 		@products = Product.all
-
+		@reviews = Review.all
 
 		#Logic for the simple SearchBar
 		@order="asc"

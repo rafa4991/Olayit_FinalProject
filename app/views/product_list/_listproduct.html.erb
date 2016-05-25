@@ -1,6 +1,19 @@
 
 <div class="row">
     <% @products.each do |product| %>
+        
+        <% count = 0 %>
+        <% rating = 0 %>
+        <% ratingAvg = 0 %>
+
+            <% @reviews.each do |review| %>
+                <% if review.product_id == product.id %>
+                    <% count = count  + 1 %>
+                    puts count
+                    <% rating = rating + review.rating %>
+                    puts rating
+                <%end%>
+        <% end %>
     <div class="col-sm-4 col-lg-4 col-md-4">
         <div class="thumbnail">
             
@@ -11,18 +24,40 @@
                 <p><%= product.description %></p>
             </div>
             <div class="ratings">
-                <p class="pull-right">15 reviews</p>
+                <p class="pull-right"> <%= count %> reviews</p>
                 <p>
+
+                <% if ratingAvg >= 1 && ratingAvg <= 2 %>
+                    <span class="glyphicon glyphicon-star"></span>
+                  
+                <% elsif ratingAvg >= 2 && ratingAvg <= 3 %>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    
+                <% elsif ratingAvg >= 3 && ratingAvg <= 4 %>
+                   
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                
+                <% elsif ratingAvg >= 4 && ratingAvg < 5 %>
+
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                <% else %>
+                   
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
+                <% end %>
                 </p>
             </div>
         </div>
     </div>
-    <% end %>
-
+  <% end %>
 </div>
 

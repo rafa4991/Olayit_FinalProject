@@ -24,7 +24,6 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    
     @review = Review.new(review_params)
     respond_to do |format|
       if @review.save
@@ -65,7 +64,6 @@ class ReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
-      @product = Product.where(:id = @review.product_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
