@@ -1,10 +1,41 @@
 <% provide(:title, @vendor.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12" >
     <section class="user_info">
-      <h1>
-        <%= @vendor.name %>
-      </h1>
+    	<h4> <strong> User Profile </strong></h4>
+       <table class="table" >
+              
+                <tbody>
+                <tr>
+                    <td> <strong> Name: </strong> </td>
+                    <td><%= @vendor.name %> </td>
+                </tr>
+                <tr>
+                    <td>  <strong> Email:</strong> </td>
+                    <td>  <%= @vendor.email %></td>
+                </tr>
+                 <tr>
+                	<td> <strong> Phone Number: </strong> </td>
+                    <td><%= @vendor.telephone %> </td>
+                </tr>	
+
+                <tr>
+                	<td> <strong> Username: </strong> </td>
+                    <td><%= @vendor.username %> </td>
+                </tr>
+                 <tr>
+                	<td> <strong> EIN: </strong> </td>
+                    <td><%= @vendor.ein %> </td>
+                </tr>
+                 <tr>
+                	<td> <strong> Role: </strong> </td>
+                    <td><%= @vendor.role %> </td>
+                </tr>
+            
+                </tbody>
+            </table>
+
+            <%= link_to "Edit Profile", "#", class: "btn btn-primary" %>
     </section>
   </aside>
 </div>

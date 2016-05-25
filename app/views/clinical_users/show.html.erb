@@ -1,10 +1,42 @@
 <% provide(:title, @clinicaluser.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12" >
     <section class="user_info">
-      <h1>
-        <%= @clinicaluser.name %>
-      </h1>
+    	<h4> <strong> User Profile </strong></h4>
+       <table class="table" >
+              
+                <tbody>
+                <tr>
+                    <td> <strong> Name: </strong> </td>
+                    <td><%= @clinicaluser.name %> </td>
+                </tr>
+                <tr>
+                    <td>  <strong> Email:</strong> </td>
+                    <td>  <%= @clinicaluser.email %></td>
+                </tr>
+                 <tr>
+                	<td> <strong> Phone Number: </strong> </td>
+                    <td> <%= @clinicaluser.telephone %> </td>
+                </tr>	
+
+                <tr>
+                	<td> <strong> Username: </strong> </td>
+                    <td><%= @clinicaluser.username %> </td>
+                </tr>
+                 <tr>
+                	<td> <strong> EIN: </strong> </td>
+                    <td><%= @clinicaluser.ein %> </td>
+                </tr>
+                 <tr>
+                	<td> <strong> Role: </strong> </td>
+                    <td><%= @clinicaluser.role %> </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+
+       		<%= link_to "Edit Profile", "#", class: "btn btn-primary" %>
     </section>
   </aside>
 </div>

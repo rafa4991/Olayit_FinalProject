@@ -8,9 +8,16 @@
 
 <div id="menu">
     <ul id="menu">
-		<li><a href="#">Profile</a></li>
+
+
+    	<!-- vendor_users/2 needs to be changed so you can get to current
+    	user profile. Somehow need to find the current id-->
+		<li><a href="/vendor_users/2">Profile</a></li>
 		<li><a href="#">Favorites</a></li>
 		<li><a href="/ProductList">Products</a></li>
+		<%if isvendor %>
+			<li><a href="/products/new">Add Product</a></li>
+		<%end%>
 		<li><%= link_to 'Home', home_index_path %></li>
 </div><!-- End of 'menu' div -->
 	
