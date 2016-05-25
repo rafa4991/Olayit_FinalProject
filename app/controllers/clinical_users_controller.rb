@@ -22,6 +22,10 @@ class ClinicalUsersController < ApplicationController
     end
   end
 
+  def edit
+  @user = ClinicalUser.find(params[:id])
+  end
+
   private
 
     def clinicaluser_params
