@@ -12,27 +12,32 @@
                     <% rating = rating + review.rating %>
                 <%end%>
         <% end %>
-    <div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="col-sm-4 col-lg-4 col-md-6">
         <div class="thumbnail">
             
             <img src="../../assets/<%= product.image %>" alt="http://placehold.it/320x150" style="width:320px;height:150px;">
             <div class="caption">
-                <h4 class="pull-right">$<%= product.price %></h4>
-                <h4><%= link_to product.name, product %></h4>
+                <h5><%= link_to product.name, product %></h5>
+                <h4> $<%= product.price %></h4>
                 <p><%= product.description %></p>
             </div>
             <div class="ratings">
                 <p class="pull-right"> <%= count %> reviews</p>
                 <p>
+                <% if count == 0 %>
+                    <% ratingAvg = 0 %>
+                <% else %>
+                    <% ratingAvg = rating/count %>
+                <%end%>
 
-                <% if ratingAvg >= 1 && ratingAvg <= 2 %>
+                <% if ratingAvg >= 1 && ratingAvg < 2 %>
                     <span class="glyphicon glyphicon-star"></span>
                   
-                <% elsif ratingAvg >= 2 && ratingAvg <= 3 %>
+                <% elsif ratingAvg >= 2 && ratingAvg < 3 %>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     
-                <% elsif ratingAvg >= 3 && ratingAvg <= 4 %>
+                <% elsif ratingAvg >= 3 && ratingAvg < 4 %>
                    
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
