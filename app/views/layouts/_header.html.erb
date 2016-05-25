@@ -1,89 +1,92 @@
-<div id="header">
-    <div id="logo">
-        <a href="../home/index"><img alt="logo" id="imgLogo" src=
-        "../../assets/logo_white"></a>
-    </div>
-    <%if isvendor %><!--User not logged in message here-->
-
-
-    <div id="search">
-        Vendor
-    </div>
-    <%elsif not(logged_in?)%>
-
-    <div id="search">
-    </div>
-
-
-    <ul>
-        <li>
-            <%else%>
-
-            <div id="search">
-                Healthcare Organization
-            </div>
-            <%end%><br>
-            <br>
-        </li>
-    </ul>
-</div>
-
-
-<div id="menu">
-    <ul id="orgMenu">
-        <li>
-            <a href="#">Chat</a>
-        </li>
-
-
-        <li>
-            <a href="#">Favorites</a>
-        </li>
+    <div id="header">
+        <div id="logo">
+            <a href="../home/index"><img alt="logo" id="imgLogo" src=
+            "../../assets/logo_white"></a>
+        </div>
         <%if isvendor %>
 
-        <li style="list-style: none; display: inline">
-            <a href=
-            "#%3EAdd%20Products%3C/a%3E%20%3C%else%%3E%20%20%3Cli%3E%20%3Ca%20href=">
-            Products</a>
-        </li>
-        <%end%>
-
-        <li><%= link_to 'Home', home_index_path %>
-        </li>
+        <div id="search">
+            Vendor
+        </div>
+        <%elsif not(logged_in?)%><!--User not logged in message here-->
 
 
-        <li>
-            <ul class="nav navbar-nav">
-                <%if logged_in? %>
-
-                <li>
-                <%= link_to "Log out", logout_path, method: "delete" %><%if current_user %>
-                </li>
+        <div id="search">
+        </div>
 
 
-                <li><%= link_to "Profile", current_user %>
-                </li>
-                <%if isvendor %>
-
-                <li>
-                <%= link_to "Vendor Settings", edit_vendor_user_path(current_user) %>
-                </li>
+        <ul>
+            <li>
                 <%else%>
 
-                <li>
-                <%= link_to "Settings", edit_clinical_user_path(current_user) %>
-                </li>
-                <%end%><%end %>
-            </ul>
-        </li>
-        <%else %>
-
-        <li><%= link_to "Login Vendor", loginVendor_path %>
-        </li>
+                <div id="search">
+                    Healthcare Organization
+                </div>
+                <%end%><br>
+                <br>
+            </li>
+        </ul>
+    </div>
 
 
-        <li><%= link_to "Login Hospital", loginHGO_path %>
-        </li>
-        <%end %>
-    </ul>
-</div>
+    <div id="menu">
+        <ul id="orgMenu">
+            <li>
+                <a href="#">Chat</a>
+            </li>
+
+
+            <li>
+                <a href="#">Favorites</a>
+            </li>
+            <%if logged_in? and isvendor  %>
+
+            <li>
+                <a href="">Add Products</a>
+            </li>
+            <%elsif logged_in?%>
+
+            <li>
+                <a href="/ProductList">Products</a>
+            </li>
+            <%else%><%end%>
+
+            <li><%= link_to 'Home', home_index_path %>
+            </li>
+
+
+            <li>
+                <ul class="nav navbar-nav">
+                    <%if logged_in? %>
+
+                    <li>
+                    <%= link_to "Log out", logout_path, method: "delete" %><%if current_user %>
+                    </li>
+
+
+                    <li><%= link_to "Profile", current_user %>
+                    </li>
+                    <%if isvendor %>
+
+                    <li>
+                    <%= link_to "Vendor Settings", edit_vendor_user_path(current_user) %>
+                    </li>
+                    <%else%>
+
+                    <li>
+                    <%= link_to "Settings", edit_clinical_user_path(current_user) %>
+                    </li>
+                    <%end%><%end %>
+                </ul>
+            </li>
+            <%else %>
+
+            <li><%= link_to "Login Vendor", loginVendor_path %>
+            </li>
+
+
+            <li><%= link_to "Login Hospital", loginHGO_path %>
+            </li>
+            <%end %>
+        </ul>
+    </div>
