@@ -37,7 +37,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#createvendor'
 
   get    'loginVendor'   => 'sessions#newVendor'
-  post   'loginVendor'   => 'sessions#createvendor'
+  post   'loginVendor'   => 'sessions#createVendor'
+
   
   get    'loginHGO'   => 'sessions#newHGO'
   post   'loginHGO'   => 'sessions#createHGO'
