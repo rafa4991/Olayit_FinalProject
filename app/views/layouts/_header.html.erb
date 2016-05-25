@@ -4,18 +4,29 @@
             <a href="../home/index"><img alt="logo" id="imgLogo" src=
             "../../assets/logo_white"></a>
         </div>
-
+        <%if isvendor %>
+        <!--User not logged in message here-->
+        <div id="search">
+            Vendor
+        </div>
+        <%elsif not(logged_in?)%>
 
         <div id="search">
-            Healthcare Organization
+            
         </div>
-        <br>
-        <br>
 
 
-        <div id="search">
-            Healthcare Organization
-        </div>
+        <ul>
+            <li>
+                <%else%>
+
+                <div id="search">
+                    Healthcare Organization
+                </div>
+                <%end%><br>
+                <br>
+            </li>
+        </ul>
     </div>
 
 
@@ -38,41 +49,26 @@
 
             <li><%= link_to 'Home', home_index_path %>
             </li>
-            <% if current_user %>
-     <li><%= link_to "Profile", current_user %> sfsdfsdf</li>
- <% end %>
 
 
             <li>
                 <ul class="nav navbar-nav">
                     <%if logged_in? %>
+
                     <li>
-                            <%= link_to "Log out", logout_path, method: "delete" %>
-                            </li>
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href=
-                        "#">Account <b class="caret"></b></a> <a href="#"></a>
-
-                        <ul class="dropdown-menu">
-                            <li><%= link_to "Profile", current_user %>
-                            </li>
-
-
-                            <li><%= link_to "Settings", '#' %>
-                            </li>
-
-
-                            
-                        </ul>
-                        <%else %>
+                    <%= link_to "Log out", logout_path, method: "delete" %><%if current_user %>
                     </li>
 
 
-                    <li><%= link_to "Login", login_path %>
+                    <li><%= link_to "Profile", current_user %>
                     </li>
                     <%end %>
                 </ul>
             </li>
+            <%else %>
+
+            <li><%= link_to "Login", login_path %>
+            </li>
+            <%end %>
         </ul>
     </div>
