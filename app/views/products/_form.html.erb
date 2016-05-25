@@ -11,6 +11,32 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <%= f.label :Name %><br>
+    <%= f.text_field :name%>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :SKU %><br>
+    <%= f.number_field :SKU %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Price %><br>
+    <%= f.number_field :price, :step => 'any'%>
+  </div>
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
