@@ -1,23 +1,32 @@
 <!-- Healthcare Organization -->
-
-<body>
     <div id="header">
         <div id="logo">
             <a href="../home/index"><img alt="logo" id="imgLogo" src=
             "../../assets/logo_white"></a>
         </div>
-
+        <%if isvendor %>
+        <!--User not logged in message here-->
+        <div id="search">
+            Vendor
+        </div>
+        <%elsif not(logged_in?)%>
 
         <div id="search">
-            Healthcare Organization
+            
         </div>
-        <br>
-        <br>
 
 
-        <div id="search">
-            Healthcare Organization
-        </div>
+        <ul>
+            <li>
+                <%else%>
+
+                <div id="search">
+                    Healthcare Organization
+                </div>
+                <%end%><br>
+                <br>
+            </li>
+        </ul>
     </div>
 
 
@@ -49,6 +58,7 @@
                     <li>
                     <%= link_to "Log out", logout_path, method: "delete" %><%if current_user %>
                     </li>
+
 
                     <li><%= link_to "Profile", current_user %>
                     </li>

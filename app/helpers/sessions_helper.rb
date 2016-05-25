@@ -12,6 +12,15 @@ module SessionsHelper
     end
   end 
 
+  def isvendor
+    if !VendorUser.find_by(id: session[:user_id]).nil?
+    return true
+    else
+    return false
+    end
+  end
+
+
   def logged_in?
     !current_user.nil? 
   end
