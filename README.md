@@ -11,7 +11,7 @@
  
 [ ] Home Page content updates, links, pictures, featured products, etc. - Unassigned   
 [ ] Update About Us, create a write up as well as fake contact info - Unassigned    
-[ ] Need to set up a login for manufacturers/vendors - Raul   
+[X] Need to set up a login for manufacturers/vendors - Raul   
 [X] Customer Login needs different fields for registration - Raul   
 [ ] Filter functionality needs to be added to catalog - Rafael   
   * Check boxes to filter through items
