@@ -1,7 +1,20 @@
-<p> <%= link_to "Login now Healthcare Provider!",  loginHGO_path  %></p>
-<p> <%= link_to "Sign up now Healthcare Provider!",  signupClinic_path  %></p>
-<p> <%= link_to "Login now as Vendor!", loginVendor_path %></p>
-<p> <%= link_to "Sign up now as Vendor!", signupVendor_path %></p>
+<!-- Page layout is linked to the 'login' layout (in the controller) -->
+
+<div id = "login_content">
+<br><br><br>
+<table id = "table_login" >
+	<tr><td><%= link_to "Login as a Healthcare Provider!",  loginHGO_path  %></td>
+		<td><%= link_to "Login as a Vendor!", loginVendor_path %></td>
+	</tr>
+	<tr><td><%= link_to "Sign up as a Healthcare Provider!",  signupClinic_path  %></td>
+		<td><%= link_to "Sign up as a Vendor!", signupVendor_path %></td>
+	</tr>
+</table>
+
+	<br><br><br>
+	<br><br><br>
+</div><!-- End 'table_content' div -->
+
 
 
 

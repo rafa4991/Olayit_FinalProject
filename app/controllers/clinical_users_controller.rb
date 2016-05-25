@@ -1,5 +1,5 @@
 class ClinicalUsersController < ApplicationController
-   
+  layout 'login'   
 
   def new
     @clinicaluser = ClinicalUser.new

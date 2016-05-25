@@ -5,13 +5,13 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-
+		<br>
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in as a provider", class: "btn btn-primary" %>
+		<br>
+      <%= f.submit "Login", class: "btn btn-primary" %>
     <% end %>
-
+	<br>
     <p>New user? <%= link_to "Sign up now!", signupClinic_path %></p>
   </div>
 </div>

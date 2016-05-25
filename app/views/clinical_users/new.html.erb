@@ -1,36 +1,37 @@
 <% provide(:title, 'Sign up') %>
-<h1>Clinical User Sign up</h1>
+<h1>Healthcare Provider Registration</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@clinicaluser) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
-
-       <%= f.label :ein %>
+		<br>
+       <%= f.label :ein, "EIN" %>
       <%= f.text_field :ein, class: 'form-control' %>
-
+		<br>
        <%= f.label :username %>
       <%= f.text_field :username, class: 'form-control' %>
-
+		<br>
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :role, "role" %>
+		<br>
+      <%= f.label :role, "Role" %>
       <%= f.text_field :role, class: 'form-control' %>
-
-      <%= f.label :telephone, "telephone" %>
+		<br>
+      <%= f.label :telephone, "Telephone" %>
       <%= f.text_field :telephone, class: 'form-control' %>
-
-      <%= f.label :organizationID, "Org ID" %>
+		<br>
+      <%= f.label :organizationID, "Organization ID" %>
       <%= f.text_field :organizationID, class: 'form-control' %>
-
+		<br>
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
-
+		<br>
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+		<br>
+      <%= f.submit "Create Account", class: "btn btn-primary" %>
     <% end %>
+	<br><br><br>
   </div>
 </div>
