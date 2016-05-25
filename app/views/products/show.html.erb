@@ -1,5 +1,4 @@
 
-
 <div class="container">
     <div class="col-xs-6"; style="text-align:right;">
         <img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:320px;height:400px;">
@@ -8,31 +7,36 @@
     <div class="col-xs-6">
    
             <table class="table">
-                <thead>
-                    <th> Name </th>
-                    <th><%= @product.name %></th>
+                <thead>  
+                    <th colspan="2"><%= @product.name %></th>
+                <tr>
+                    <th colspan="2"><%= link_to 'Add to Favorites', '#' %></th> 
+                </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td> SKU: </td>
+                    <td> <strong> SKU: </strong> </td>
                     <td> <%= @product.SKU %> </td>
                 </tr>
                 <tr>
-                    <td> Product Description: </td>
+                    <td>  <strong> Product Description:</strong> </td>
                     <td> <%= @product.description %> </td>
                 </tr>
                 <tr>
                     
                 </tr>
                 <tr>
-                    <td> <%= link_to 'Add to Favorites', '#' %>  </td>
+                    <td> <strong> Features: </strong> </td>
+                    <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a sagittis turpis, eget vestibulum nulla. Vestibulum urna libero, porttitor ut augue in, consequat ultrices arcu. Sed semper non odio eget vehicula. Duis elit quam, cursus eget interdum ut, pretium nec lorem. Nam suscipit dictum nisl, nec mollis ipsum varius et. Nulla sed ligula eget turpis lacinia suscipit. Nunc tempor congue mi, nec suscipit augue sagittis eget. Fusce blandit facilisis diam et pulvinar.
+
+</td>
                 </tr>
                 <tr>
-                    <td> Features: </td>
-                </tr>
-                <tr>
-                    <td> Included: </td>
+                    <td> <strong> Included: </strong> </td>
+                    <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a sagittis turpis, eget vestibulum nulla. Vestibulum urna libero, porttitor ut augue in, consequat ultrices arcu. Sed semper non odio eget vehicula. Duis elit quam, cursus eget interdum ut, pretium nec lorem. Nam suscipit dictum nisl, nec mollis ipsum varius et. Nulla sed ligula eget turpis lacinia suscipit. Nunc tempor congue mi, nec suscipit augue sagittis eget. Fusce blandit facilisis diam et pulvinar.
+
+ </td>
                 </tr>
 
                 </tbody>
@@ -75,13 +79,21 @@
     </div>
     <% end %>
 
-     <br>  </br>
     <div class="col-xs-12"; style="text-align:center;">
          <% @reviews.each do |review| %>
             <% if review.product_id == @product.id %>
             <div class="col-xs-12"; style="text-align:center;">
-                <%= review.content %>
-                 <%= review.rating %>
+                <table class="table">
+                    <thead>
+                        <th style="text-align:center;"> Review</th>
+                        <th style="text-align:center;"> Rating</th>
+                    </thead>
+
+                    <tbody>
+                        <td> <%= review.content %></td>
+                         <td> <%= review.rating %></td>
+                    </tbody>  
+                </table>
             </div>
             <br>
             </br>

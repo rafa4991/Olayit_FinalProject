@@ -9,9 +9,7 @@
             <% @reviews.each do |review| %>
                 <% if review.product_id == product.id %>
                     <% count = count  + 1 %>
-                    puts count
                     <% rating = rating + review.rating %>
-                    puts rating
                 <%end%>
         <% end %>
     <div class="col-sm-4 col-lg-4 col-md-4">
