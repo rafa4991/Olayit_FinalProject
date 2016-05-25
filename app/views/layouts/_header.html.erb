@@ -1,93 +1,19 @@
+<!-- Header File -->
+<!-- Separated menu from header -->
+
     <div id="header">
         <div id="logo">
             <a href="../home/index"><img alt="logo" id="imgLogo" src=
             "../../assets/logo_white"></a>
         </div>
-        <%if isvendor %>
 
         <div id="search">
-            Vendor
+			<%if logged_in? %>	
+				<%= link_to "Log out", logout_path, method: "delete" %>
+			<%else %>
+				<%= link_to "Login", userpaths_index_path %>
+			<%end %>
         </div>
-        <%elsif not(logged_in?)%><!--User not logged in message here-->
-
-
-        <div id="search">
-        </div>
-
-
-        <ul>
-            <li>
-                <%else%>
-
-                <div id="search">
-                    Healthcare Organization
-                </div>
-                <%end%><br>
-                <br>
-            </li>
-        </ul>
     </div>
-
-
-    <div id="menu">
-        <ul id="orgMenu">
-            <li>
-                <a href="#">Chat</a>
-            </li>
-
-
-            <li>
-                <a href="#">Favorites</a>
-            </li>
-            <%if logged_in? and isvendor  %>
-
-            <li>
-                <a href="/products/new">Add Products</a>
-                <a href="/ProductList">Products</a>
-            </li>
-            <%elsif logged_in?%>
-
-            <li>
-                <a href="/ProductList">Products</a>
-            </li>
-            <%else%><%end%>
-
-            <li><%= link_to 'Home', home_index_path %>
-            </li>
-
-
-            <li>
-                <ul class="nav navbar-nav">
-                    <%if logged_in? %>
-
-                    <li>
-                    <%= link_to "Log out", logout_path, method: "delete" %><%if current_user %>
-                    </li>
-
-
-                    <li><%= link_to "Profile", current_user %>
-                    </li>
-                    <%if isvendor %>
-
-                    <li>
-                    <%= link_to "Vendor Settings", edit_vendor_user_path(current_user) %>
-                    </li>
-                    <%else%>
-
-                    <li>
-                    <%= link_to "Settings", edit_clinical_user_path(current_user) %>
-                    </li>
-                    <%end%><%end %>
-                </ul>
-            </li>
-            <%else %>
-
-            <li><%= link_to "Login Vendor", loginVendor_path %>
-            </li>
-
-
-            <li><%= link_to "Login Hospital", loginHGO_path %>
-            </li>
-            <%end %>
-        </ul>
-    </div>
+	
+	
