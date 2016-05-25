@@ -18,6 +18,10 @@ class VendorUsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def edit
+  @user = VendorUser.find(params[:id])
+  end
 
   private
 

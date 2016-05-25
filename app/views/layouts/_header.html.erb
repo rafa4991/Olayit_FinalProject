@@ -62,6 +62,14 @@
 
                     <li><%= link_to "Profile", current_user %>
                     </li>
+
+                    <%if isvendor %>
+                    <li><%= link_to "Vendor Settings", edit_vendor_user_path(current_user) %></li>
+                    <%else%>   
+                    <li><%= link_to "Settings", edit_clinical_user_path(current_user) %></li>
+                    <%end%>
+                    
+
                     <%end %>
                 </ul>
             </li>
