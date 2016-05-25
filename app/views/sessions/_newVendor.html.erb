@@ -9,8 +9,8 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.submit "Log in Vendor", class: "btn btn-primary" %>
+      <%= f.submit "Log in as a vendor", class: "btn btn-primary" %>
     <% end %>
-
+	<p>New user? <%= link_to "Sign up now!", signupVendor_path %></p>
   </div>
 </div>

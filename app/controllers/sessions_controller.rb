@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def createvendor
+  def createVendor
     user = VendorUser.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user

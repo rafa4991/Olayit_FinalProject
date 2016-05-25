@@ -1,18 +1,17 @@
-<!-- Healthcare Organization -->
     <div id="header">
         <div id="logo">
             <a href="../home/index"><img alt="logo" id="imgLogo" src=
             "../../assets/logo_white"></a>
         </div>
         <%if isvendor %>
-        <!--User not logged in message here-->
+
         <div id="search">
             Vendor
         </div>
-        <%elsif not(logged_in?)%>
+        <%elsif not(logged_in?)%><!--User not logged in message here-->
+
 
         <div id="search">
-            
         </div>
 
 
@@ -40,12 +39,18 @@
             <li>
                 <a href="#">Favorites</a>
             </li>
+            <%if logged_in? and isvendor  %>
 
+            <li>
+                <a href="#">Add Products</a>
+                <a href="/ProductList">Products</a>
+            </li>
+            <%elsif logged_in?%>
 
             <li>
                 <a href="/ProductList">Products</a>
             </li>
-
+            <%else%><%end%>
 
             <li><%= link_to 'Home', home_index_path %>
             </li>
@@ -62,20 +67,26 @@
 
                     <li><%= link_to "Profile", current_user %>
                     </li>
-
                     <%if isvendor %>
-                    <li><%= link_to "Vendor Settings", edit_vendor_user_path(current_user) %></li>
-                    <%else%>   
-                    <li><%= link_to "Settings", edit_clinical_user_path(current_user) %></li>
-                    <%end%>
-                    
 
-                    <%end %>
+                    <li>
+                    <%= link_to "Vendor Settings", edit_vendor_user_path(current_user) %>
+                    </li>
+                    <%else%>
+
+                    <li>
+                    <%= link_to "Settings", edit_clinical_user_path(current_user) %>
+                    </li>
+                    <%end%><%end %>
                 </ul>
             </li>
             <%else %>
 
-            <li><%= link_to "Login", login_path %>
+            <li><%= link_to "Login Vendor", loginVendor_path %>
+            </li>
+
+
+            <li><%= link_to "Login Hospital", loginHGO_path %>
             </li>
             <%end %>
         </ul>
