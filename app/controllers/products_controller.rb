@@ -35,22 +35,7 @@ class ProductsController < ApplicationController
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
-    end
-
-
-     @review = Review.new(review_params)
-
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
-    end
-
-    
+    end    
   end
 
   # PATCH/PUT /products/1
@@ -83,6 +68,11 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       @reviews = Review.all
     end
+
+    def set_review
+      @review = Review.find(params[:product_id])
+    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params

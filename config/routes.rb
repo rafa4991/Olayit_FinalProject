@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :reviews
+  resources :products
+  resources :users
+  resources :clinical_users
+  resources :vendor_users
 
+  root 'userpaths#index'
   get 'vendor_users/new'
+
+
+  get 'products/:id' => 'products#index'
 
   get 'clinical_users/new'
 
@@ -13,14 +22,9 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  resources :reviews
-  resources :products
-  #root 'product_list#index'
-
   get 'home/index'
 
   get 'home/new'
-
 
   get 'welcome/productpage'
 
@@ -44,18 +48,12 @@ Rails.application.routes.draw do
 
   delete 'logout'  => 'sessions#destroy'
 
-
-  
-  resources :users
-  resources :clinical_users
-  resources :vendor_users
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   #root 'product_list#index'
-  root 'userpaths#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

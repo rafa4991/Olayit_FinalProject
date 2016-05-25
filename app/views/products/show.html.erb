@@ -1,16 +1,17 @@
-  
+
+
 <div class="container">
     <div class="col-xs-6"; style="text-align:right;">
-        <img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:320px;height:300px;">
+        <img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:320px;height:400px;">
     </div>
 
     <div class="col-xs-6"; style="text-align:left;">
    
             <div class="col-xs-6">
-                <h2><%= link_to @product.name, @product %></24>
-                <h4> SKU: 1234 <h4>
+                <h2><%= @product.name %></24>
+                <h4> SKU: <%= @product.SKU %> <h4>
                 <h4> Product Description </h4>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed pharetra lacus, et tincidunt nisl. In eget dolor libero. Aliquam varius porta ipsum, in tristique eros placerat non. Quisque tristique lorem sit amet tellus lacinia condimentum. Cras eu velit nec est efficitur porttitor non placerat ligula. Proin eleifend molestie nisi, nec ornare orci sodales in. Phasellus tempus ex nec neque vulputate, ut laoreet lectus accumsan. Donec bibendum libero turpis, sit amet fermentum arcu finibus eget. Nam fermentum tortor velit, nec efficitur lorem ultrices sit amet. </p>
+                <p> <%= @product.description %></p>
                 <h4> Add to Favorites </h4>
                 <h4> Features </h4>
                 <h4> Included </h4>
@@ -19,21 +20,20 @@
 
     <div class="col-xs-12"; style="text-align:center;">
         <h4>Leave a Review!</h4>
-                <%= form_for :review do |f| %>
-                    <p>
-                       <%= f.label :review %><br>
-                       <%= f.text_area :text %>
-                    </p>
-                    <p>
-                       <%= f.submit %>
-                    </p>
-                    <% end %>   
-
+        <%= link_to 'New Review', new_review_path %>
+     <br>  </br>
+    <div class="col-xs-12"; style="text-align:center;">
          <% @reviews.each do |review| %>
             <% if review.product_id == @product.id %>
+            <div class="col-xs-12"; style="text-align:center;">
                 <%= review.content %>
+                 <%= review.rating %>
+            </div>
+            <br>
+            </br>
             <%end%>
         <%end%> 
+    </div>
 
 
     </div>
