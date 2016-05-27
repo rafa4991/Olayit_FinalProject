@@ -14,8 +14,11 @@
 <body>
 	<%= render "layouts/header" %>
 	<%= render "layouts/menu" %>
-	<%= yield %>
+	<div id = "main_content">
+		<%= yield %>
+	</div>
 	<%= render "layouts/footer" %>
 </body>
 
 </html>
+
