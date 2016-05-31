@@ -19,7 +19,10 @@
                 <thead>  
                     <th colspan="2"><%= @product.name %></th>
                 <tr>
-                    <th colspan="2"><%= link_to 'Add to Favorites', '#' %></th> 
+                    <th colspan="2"><%= link_to 'Add to Favorites', '#' %></th>
+                <tr>
+                    <th colspan="2"><a href="/compare/<%= @product.id %>">Add to Compare</a></th>
+                </tr>
                 </tr>
                 </thead>
 
@@ -29,21 +32,13 @@
                     <td> <%= @product.SKU %> </td>
                 </tr>
                 <tr>
+                    <td> <strong> Price: </strong> </td>
+                    <td> <%= @product.price %> </td>
+                </tr>
+
+                <tr>
                     <td>  <strong> Product Description:</strong> </td>
                     <td> <%= @product.description %> </td>
-                </tr>
-                <tr>
-                    
-                </tr>
-                <tr>
-                    <td> <strong> Features: </strong> </td>
-                    <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a sagittis turpis, eget vestibulum nulla. Vestibulum urna libero, porttitor ut augue in, consequat ultrices arcu. Sed semper non odio eget vehicula. Duis elit quam, cursus eget interdum ut, pretium nec lorem. Nam suscipit dictum nisl, nec mollis ipsum varius et. Nulla sed ligula eget turpis lacinia suscipit. Nunc tempor congue mi, nec suscipit augue sagittis eget. Fusce blandit facilisis diam et pulvinar.
-                    </td>
-                </tr>
-                <tr>
-                    <td> <strong> Included: </strong> </td>
-                    <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a sagittis turpis, eget vestibulum nulla. Vestibulum urna libero, porttitor ut augue in, consequat ultrices arcu. Sed semper non odio eget vehicula. Duis elit quam, cursus eget interdum ut, pretium nec lorem. Nam suscipit dictum nisl, nec mollis ipsum varius et. Nulla sed ligula eget turpis lacinia suscipit. Nunc tempor congue mi, nec suscipit augue sagittis eget. Fusce blandit facilisis diam et pulvinar.
-                    </td>
                 </tr>
 
                 </tbody>

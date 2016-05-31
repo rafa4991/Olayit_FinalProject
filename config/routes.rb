@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   root 'userpaths#index'
   get 'vendor_users/new'
 
+  get '/compare' => 'compare#index'
+  get '/compare/clear' => 'compare#clearCompare'
+  get '/compare/:id' => 'compare#add'
+
 
   get 'products/:id' => 'products#index'
 
