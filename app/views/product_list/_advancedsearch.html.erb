@@ -19,26 +19,34 @@
                                 <option value="1000">1000</option>
                             </select>                                
                         </div> <!-- form group [rows] -->
-                        <div class="form-group">
-                            <label class="filter-col" style="margin-right:0;" for="pref-search">Search:</label>
-                            
-                            <input name="advancedSearch" type="text" class="form-control input-sm" id="pref-search">
-                            
-                        </div><!-- form group [search] -->
+                        <!-- form group [search] -->
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="pref-orderby">Order by:</label>
                             <select name="sort" id="pref-orderby" class="form-control">
                                 <option value="name">Product Name</option>
                                 <option>Manufacturer</option>
+                                <option>Vendor</option>
                                 <option value="price">Price</option>
                                 <option value-"description">Description</option>
+                                <option value-"rating">Rating</option>
                             </select>                                
+
                         </div> 
+                        <% if !params[:search].nil? %>
+                            <%= hidden_field_tag 'search', "#{params[:search]}" %>
+                        <% end %>
+                        
 
                         <input name="order" type="hidden" value"asc"> 
+                        <button type="submit" class="btn btn-default filter-col" style="float: right;">
+                                Refine Results
+                        </button>  
+
 
                         <!-- form group [order by] --> 
                         <!--
+                        <input name="submit" type="submit" class="btn btn-primary" style="float: right;"> 
+
                         <div class="form-group">    
                             <div class="checkbox" style="margin-left:10px; margin-right:10px;">
                                 <label><input type="checkbox"> Remember parameters</label>

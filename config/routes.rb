@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get 'welcome/productpage'
 
   get 'ProductList' => 'product_list#index'
+  post 'ProductList' => 'product_list#index'
   get 'pages/home'
 
   get 'Favorites' => 'favorites#index', as: 'favorites'

@@ -49,4 +49,11 @@ class ProductListController < ApplicationController
 
 	end
 
+	def filter
+		if !params[:priceRange].nil?
+			@priceRange = params[:priceRange]
+		end
+
+	end
+
 end

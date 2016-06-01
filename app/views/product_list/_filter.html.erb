@@ -1,8 +1,67 @@
 <div class="col-md-3">
     <p class="lead">Filter Results </p>
     <div class="list-group">
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
+    	<div class="list-group-item">
+	    	<div class="form-group">
+                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Price Range:</label>
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
+	                <select name="priceRange" id="priceRange" class="form-control" onchange="this.form.submit()">
+	                    <option value="1-1000">$1 - $1000</option>
+	                    <option value="1000-2000">$1000 - $2000</option>
+	                    <option value="2000-3000">$2000 - $3000</option>
+	                    <option value="3000-4000">$3000 - $4000</option>
+	                    <option value="4000-5000">$4000 - $5000</option>
+	                    <option value="5000+">$5000+</option>
+	                </select>     
+	            <% end %>                           
+            </div>
+        </div>
+
+        <div class="list-group-item">
+	    	<div class="form-group">
+                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Manufacturer:</label>
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
+	                <select name="manufacturer" id="manufacturer" class="form-control" onchange="this.form.submit()">
+	                    <option value="1">Manufacturer 1</option>
+	                    <option value="2">Manufacturer 2</option>
+	                    <option value="3">Manufacturer 3</option>
+	                    <option value="4">Manufacturer 4</option>
+	                    <option value="5">Manufacturer 5</option>
+	                    <option value="6">Manufacturer 6</option>
+	                </select>     
+	            <% end %>                           
+            </div>
+        </div>
+        <div class="list-group-item">
+	    	<div class="form-group">
+                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Vendor:</label>
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
+	                <select name="vendor" id="vendor" class="form-control" onchange="this.form.submit()">
+	                    <option value="1">Vender 1</option>
+	                    <option value="2">Vender 2</option>
+	                    <option value="3">Vender 3</option>
+	                    <option value="4">Vender 4</option>
+	                    <option value="5">Vender 5</option>
+	                    <option value="6">Vender 6</option>
+	                </select>     
+	            <% end %>                           
+            </div>
+        </div>
+        <div class="list-group-item">
+	    	<div class="form-group">
+                <label class="filter-col" style="margin-right:0;" for="pref-perpage">Average Review:</label>
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
+	                <select name="review" id="review" class="form-control" onchange="this.form.submit()">
+	                    <option value="1">0-1</option>
+	                    <option value="2">1-2</option>
+	                    <option value="3">2-3</option>
+	                    <option value="4">3-4</option>
+	                    <option value="5">4-5</option>
+	                </select>     
+	            <% end %>                           
+            </div>
+        </div>
+
+
     </div>
 </div>

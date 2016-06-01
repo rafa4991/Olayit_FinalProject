@@ -4944,6 +4944,10 @@ a.badge:focus {
   text-decoration: none;
   cursor: pointer;
 }
+.compareBtn{
+  float: right;
+}
+
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
   color: #337ab7;
