@@ -1,5 +1,5 @@
 class VendorUsersController < ApplicationController
-  layout 'login'
+
   def new
     @vendor = VendorUser.new
     
