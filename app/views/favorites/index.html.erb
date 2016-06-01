@@ -1,4 +1,4 @@
-<h1>Compare Products!</h1>
+<h1>Favorite Products</h1>
 <% if @Favorites.empty? %>
   <p>No products in Favorites</p>
 <% else %>
@@ -9,17 +9,7 @@
 <!-- Accessing the compare session hash ["1",1], where "1" is the product id.
 -->
 
-<% @compare.each do |id, qty| %>
-  <% product = Product.find_by_id(id) %>
-  
-  <ul>
-  <li>
-    <%= link_to product.name, product %>
-    <p><%= product.description %></p>
-  </li>
-  </ul>
 
-<% end %>
 
 
 
