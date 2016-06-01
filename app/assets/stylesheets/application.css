@@ -134,6 +134,15 @@ tr, td {
 	color: white;
 }
 
+#main_content a {
+	color: black;
+}
+
+#main_content a:hover {
+	color: white;
+	background-color: #00A8E8;
+}
+
 #footer {
 	background-color: #00A8E8;
 	font-size: 80%;
@@ -147,4 +156,8 @@ tr, td {
 	line-height: 25px;
 }
 
-
+input[type="button"] {
+	background-color: red;
+            padding-left: 10px;
+            padding-right: 10px;
+}
