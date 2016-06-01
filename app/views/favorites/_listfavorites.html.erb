@@ -1,0 +1,33 @@
+<% i=0 %>
+<% totqty=0 %>
+<% totprice=0 %>
+
+
+
+<div class="row">
+    <% @AllFavorites.each do |fav| %>
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            
+            <img src="../../assets/<%= product.image %>" alt="http://placehold.it/320x150" style="width:320px;height:150px;">
+            <div class="caption">
+                <h4 class="pull-right">$<%= fav.price %></h4>
+                <h4><%= link_to fav.name, fav %></h4>
+                <p><%= fav.description %></p>
+            </div>
+            <div class="ratings">
+                <p class="pull-right">15 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% end %>
+
+</div>
+

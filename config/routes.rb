@@ -35,6 +35,10 @@ Rails.application.routes.draw do
   get 'ProductList' => 'product_list#index'
   get 'pages/home'
 
+  get 'Favorites' => 'favorites#index', as: 'favorites'
+  post 'Favorites' => 'favorites#index'
+
+  post "favorites/addFavorite"
 
   get 'signup'  => 'users#new'
   get 'signupVendor'  => 'vendor_users#new'

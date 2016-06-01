@@ -21,6 +21,11 @@
                 <h4> $<%= product.price %></h4>
                 <p><%= product.description %></p>
             </div>
+            <%= form_tag :controller => 'favorites', :action => 'index', :method => 'addFavorite' do %>
+                <%= hidden_field_tag 'productID', "#{product.id}" %>
+                <%= hidden_field_tag 'email', "#{current_user.email}"%>
+                <%= submit_tag "Add to Favorites"  %>
+            <% end %>
             <div class="ratings">
                 <p class="pull-right"> <%= count %> reviews</p>
                 <p>
