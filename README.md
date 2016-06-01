@@ -3,14 +3,16 @@
 #### Tasks
 
 - [x] Initial db setup  - Ryan  
-- [ ] Front End/Theme Needs to Be Set Up - Marissa/Stephanie
+- [x] Front End/Theme Needs to Be Set Up - Marissa/Stephanie
   * Colors
   * Header/Footer
   * Fonts
   * Logo
   * etc.
+  
+- [x] Update home page - Marissa
 
-- [ ] Update About Us, create a write up as well as fake contact info - Unassigned    
+- [ ] Update About Us, create a write up as well as fake contact info - Stephanie    
 
 - [x] Set up a login for manufacturers/vendors - Raul   
 
@@ -29,6 +31,6 @@
 
 - [ ] Comparison ability for products
   
-- [ ] Need to add cart tab to header and possibly switch name to "favorites" or something like that - Rafael 
+- [x] Need to add cart tab to header and possibly switch name to "favorites" or something like that  
 
 - [ ] Chat feature - Ryan
