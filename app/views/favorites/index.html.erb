@@ -1,0 +1,74 @@
+<h1>Favorite Products</h1>
+Current User Favorites:<br>
+<% if @Favorites.empty? %>
+  <p>No products in Favorites</p>
+<% else %>
+    <%@Favorites.each do |fav|%>
+        <%=fav.id%>
+        <%= fav.userID%>
+        <%= fav.productID%>
+        <%= fav.userEmail%>
+        <br>
+    <% end %>
+<% end %>
+<br><br>
+All Favorites: <br>
+<% if @AllFavorites.empty? %>
+  <p>No products in AllFavorites</p>
+<% else %>
+    <% @AllFavorites.each do |fav| %>
+        <%= fav.id%>
+        <%= fav.userID%>
+        <%= fav.productID%>
+        <%= fav.userEmail%>
+        <br>
+    <% end %>
+<% end %>
+
+
+<br>
+
+Current User ID: <%=current_user.id%><br>
+Current User Email: <%=current_user.email%><br>
+Added Product ID: <%=params[:productID].to_i%>
+<br><br><br>
+
+
+
+<!-- Accessing the compare session hash ["1",1], where "1" is the product id.
+-->
+
+
+
+
+
+  
+    <br><br>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-9">
+
+
+                <!--COMPARE PRODUCT BUTTON (start)-->
+                
+                <!--COMPARE PRODUCT BUTTON (end)-->
+
+                <br/><br/><br/>
+
+                
+                
+                    <!--PRODUCT LIST (start)-->
+                    <%= render "listfavorites" %>
+                    <!--PRODUCT LIST (end)-->
+            </div>
+
+        </div>
+
+    </div>
+    
+
+

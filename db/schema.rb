@@ -37,10 +37,14 @@ ActiveRecord::Schema.define(version: 20160601232419) do
 
   add_index "clinical_users", ["email"], name: "index_clinical_users_on_email", unique: true
 
+  create_table "favorite_products", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer  "clinicalID"
     t.integer  "productID"
+    t.integer  "userID"
     t.string   "userEmail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
