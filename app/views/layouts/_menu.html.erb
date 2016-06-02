@@ -2,13 +2,11 @@
 <!-- Only shown if user is logged in (either as vendor or clinic) -->
 <div id="menu">
     <ul id="menu">
-    	<!-- vendor_users/2 needs to be changed so you can get to current
-    	user profile. Somehow need to find the current id-->
-		
+    			
 		<% if isvendor %>
-			<li><a href="/vendor_users/1">Profile</a></li>
+			<li><%= link_to "Profile", vendor_path %></li>
 		<% else %>
-			<li><a href="/clinical_users/1">Profile</a></li>
+			<li><%= link_to "Profile", clinical_user_path%></li>
 		<% end %>
 
 		<li><%= link_to "Compare", compare_path %></li>
