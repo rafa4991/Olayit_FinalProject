@@ -1,24 +1,27 @@
 <!-- Menu File -->
-<!-- Separated menu from header
-		Will add dropdowns for Products (edit products)
-		Make Favorites conditional based on if healthcare org
-		Settings included in profile
-		-->
-
-
+<!-- Only shown if user is logged in (either as vendor or clinic) -->
 <div id="menu">
     <ul id="menu">
-
-
     	<!-- vendor_users/2 needs to be changed so you can get to current
     	user profile. Somehow need to find the current id-->
-		<li><a href="/vendor_users/1">Profile</a></li>
-		<li><a href="#">Favorites</a></li>
-		<li><a href="/ProductList">Products</a></li>
+		
+		<% if isvendor %>
+			<li><a href="/vendor_users/1">Profile</a></li>
+		<% else %>
+			<li><a href="/clinical_users/1">Profile</a></li>
+		<% end %>
+
 		<li><%= link_to "Compare", compare_path %></li>
+		
 		<%if isvendor %>
 			<li><a href="/products/new">Add Product</a></li>
+		<% else %>
+			<li><a href="#">Favorites</a></li>
 		<%end%>
+		
+		<li><a href="/ProductList">Products</a></li>
+
 		<li><%= link_to 'Home', home_index_path %></li>
+	</ul>
 </div><!-- End of 'menu' div -->
 	
