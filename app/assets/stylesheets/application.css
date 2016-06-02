@@ -144,6 +144,12 @@ tr, td {
 	background-color: #00A8E8;
 }
 
+#featured_products a {
+	color: black;
+}
+
+
+
 #footer {
 	background-color: #00A8E8;
 	font-size: 80%;
