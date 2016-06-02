@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # resources :favorites
   resources :reviews
   resources :products
   resources :users
@@ -36,10 +37,10 @@ Rails.application.routes.draw do
   post 'ProductList' => 'product_list#index'
   get 'pages/home'
 
-  get 'Favorites' => 'favorites#index', as: 'favorites'
+  get 'Favorites' => 'favorites#index'
   post 'Favorites' => 'favorites#index'
-
-  post "favorites/addFavorite"
+ 
+  #post "favorites/addFavorite"
 
   get 'signup'  => 'users#new'
   get 'signupVendor'  => 'vendor_users#new'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524214458) do
+ActiveRecord::Schema.define(version: 20160601232419) do
 
   create_table "clinical_organizations", force: :cascade do |t|
     t.string   "name"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 20160524214458) do
 
   add_index "clinical_users", ["email"], name: "index_clinical_users_on_email", unique: true
 
+
   create_table "favorites", force: :cascade do |t|
     t.integer  "clinicalID"
     t.integer  "productID"
+    t.string   "userEmail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
