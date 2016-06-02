@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to user
-      #cookies[:type]={ value: "Vendor", expires: 15.minutes}
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
@@ -37,7 +36,6 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to user
-      #cookies[:type]={ value: "Vendor", expires: 15.minutes}
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
@@ -45,8 +43,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
-    #cookies[:type]={ value: "None", expires: 5.minutes}
+    log_out if logged_in?
     redirect_to root_url
   end
 
