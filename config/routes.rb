@@ -40,8 +40,6 @@ Rails.application.routes.draw do
   get 'Favorites' => 'favorites#index'
   post 'Favorites' => 'favorites#index'
  
-  post "favorites/addFavorite"
-  post "favorites/deleteFavorite"
 
   get 'signup'  => 'users#new'
   get 'signupVendor'  => 'vendor_users#new'

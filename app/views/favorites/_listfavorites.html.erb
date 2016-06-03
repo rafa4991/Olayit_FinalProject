@@ -1,27 +1,82 @@
 <div class="row">
-    <% @AllProducts.each do |fav| %>
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            
-            <img src="../../assets/<%= fav.image %>" alt="http://placehold.it/320x150" style="width:320px;height:150px;">
-            <div class="caption">
-                <h4 class="pull-right">$<%= fav.price %></h4>
-                <h4><%= link_to fav.name, fav %></h4>
-                <p><%= fav.description %></p>
+    <%if @FavoriteProducts.empty?%>
+        You have no favorites.
+    <%else%>
+        <% @FavoriteProducts.each do |product| %>
+            <% count = 0 %>
+            <% rating = 0 %>
+            <% ratingAvg = 0 %>
+
+                <% @reviews.each do |review| %>
+                    <% if review.product_id == product.id %>
+                        <% count = count  + 1 %>
+                        <% rating = rating + review.rating %>
+                    <%end%>
+                <% end %>
+            <div class="col-sm-4 col-lg-4 col-md-6">
+                <div class="thumbnail">
+                    
+                    <img src="../../assets/<%= product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:150px;">
+                    <div class="caption">
+                        <h5 align="center"><%= link_to product.name, product %></h5>
+                        <h4> $<%= product.price %></h4>
+                        <p><%= truncate(product.description, :length => 75) %></p>
+                        
+                        <!-- Compare Button Code 
+                        <%= form_tag :controller => 'compare', :action => 'index', :method => 'add', id: 'compareBtn' do %>
+                            <%= hidden_field_tag 'productID', "#{product.id}" %>
+                            <%= hidden_field_tag 'email', "#{current_user.email}"%>
+                            <button type="submit" class="btn btn-default filter-col">Compare</button>  
+                        <% end %>
+                        -->
+                    </div>
+                    <%= form_tag :controller => 'favorites', :action => 'index', :method => 'deleteFavorite' do %>
+                            <%= hidden_field_tag 'productID', "#{product.id}" %>
+                            <%= hidden_field_tag 'email', "#{current_user.email}"%>
+                            <button type="submit" class="btn btn-default filter-col" name="delete" id="delete">Remove from Favorites</button>  
+                        <% end %>
+                    <br>
+                    <div class="ratings">
+                        <p class="pull-right"> <%= count %> reviews</p>
+                        <p>
+                        <% if count == 0 %>
+                            <% ratingAvg = 0 %>
+                        <% else %>
+                            <% ratingAvg = rating/count %>
+                        <%end%>
+
+                        <% if ratingAvg >= 1 && ratingAvg < 2 %>
+                            <span class="glyphicon glyphicon-star"></span>
+                          
+                        <% elsif ratingAvg >= 2 && ratingAvg < 3 %>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            
+                        <% elsif ratingAvg >= 3 && ratingAvg < 4 %>
+                           
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        
+                        <% elsif ratingAvg >= 4 && ratingAvg < 5 %>
+
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        <% else %>
+                           
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        <% end %>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="ratings">
-                <p class="pull-right">15 reviews</p>
-                <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                </p>
-            </div>
-        </div>
-    </div>
+        <% end %>
     <% end %>
-    
 </div>
 

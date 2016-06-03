@@ -1,0 +1,53 @@
+ Favorite Products:<br>
+        <% if @FavoriteProducts.empty? %>
+          <p>No product ids</p>
+        <% else %>
+            <%@FavoriteProducts.each do |product|%>
+                <%=product.name%>
+                <br>
+            <% end %>
+        <% end %>
+        <br>
+
+        Current Product ID:<br>
+        <% if @ProductIDs.empty? %>
+          <p>No product ids</p>
+        <% else %>
+            <%@ProductIDs.each do |id|%>
+                <%=id%>
+                <br>
+            <% end %>
+        <% end %>
+        <br>
+
+        Current User Favorites:<br>
+        <% if @Favorites.empty? %>
+          <p>No products in Favorites</p>
+        <% else %>
+            <%@Favorites.each do |fav|%>
+                <%=fav.id%>
+                <%= fav.userID%>
+                <%= fav.productID%>
+                <%= fav.userEmail%>
+                <br>
+            <% end %>
+        <% end %>
+        <br>
+        All Favorites: <br>
+        <% if @AllFavorites.empty? %>
+          <p>No products in AllFavorites</p>
+        <% else %>
+            <% @AllFavorites.each do |fav| %>
+                <%= fav.id%>
+                <%= fav.userID%>
+                <%= fav.productID%>
+                <%= fav.userEmail%>
+                <br>
+            <% end %>
+        <% end %>
+
+        <br>
+        Current User ID: <%=current_user.id%><br>
+        Current User Email: <%=current_user.email%><br>
+        Added Product ID: <%=params[:productID].to_i%>
+        <br><br><br>
