@@ -8,7 +8,7 @@
          </thead>
 
          <tbody>
-            <td> Links and Further Research will go here </td>
+            <td colspan="2"><a href="/compare/<%= @product.id %>">Add to Compare</a></td>
          </tbody>
          </table>
     </div>
@@ -37,8 +37,20 @@
                 </tr>
 
                 <tr>
-                    <td>  <strong> Product Description:</strong> </td>
-                    <td> <%= @product.description %> </td>
+                    <td> <strong> Manufacturer: </strong> </td>
+                    <td> <%= @product.price %> 
+                </tr>
+
+                <tr>
+                    <td> <strong> Warranty: </strong> </td>
+                    <td> <%= @product.price %> </td> 
+                </tr>
+
+                <tr>
+                    <td> <strong> Dimensions: </strong> </td>
+                    <td> Height: </td>
+                    <td> Depth: </td>
+                    <td> Width: </td>
                 </tr>
 
                 </tbody>
@@ -46,7 +58,11 @@
     </div>
 
     <div class="col-xs-12"; style="text-align:center;">
-       
+            <h4> Product Description </h4>
+            <p> <%= @product.description %> </p> 
+            <h4> Product Features </h4>
+            <p> <%= @product.features %> </p> 
+           
        
        <%= form_for(@review) do |f| %>
             <% if @review.errors.any? %>
@@ -60,7 +76,7 @@
                 </ul>
                 </div>
         <% end %>
-
+     <br></br>
      <div class="field">
         <%= f.label :Leave_a_Review! %><br>
         <%= f.text_area :content, class: 'form-control' %>

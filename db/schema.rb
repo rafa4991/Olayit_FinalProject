@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601232419) do
+ActiveRecord::Schema.define(version: 20160603213536) do
 
   create_table "clinical_organizations", force: :cascade do |t|
     t.string   "name"
@@ -37,11 +37,6 @@ ActiveRecord::Schema.define(version: 20160601232419) do
 
   add_index "clinical_users", ["email"], name: "index_clinical_users_on_email", unique: true
 
-  create_table "favorite_products", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "favorites", force: :cascade do |t|
     t.integer  "productID"
     t.integer  "userID"
@@ -57,9 +52,16 @@ ActiveRecord::Schema.define(version: 20160601232419) do
     t.float    "price"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "SKU"
+    t.string   "manufacturer"
+    t.string   "features"
+    t.string   "research"
+    t.integer  "depth"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "warranty"
   end
 
   create_table "reviews", force: :cascade do |t|
