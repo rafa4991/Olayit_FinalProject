@@ -57,6 +57,16 @@ tr, td {
 	height: 100px;
 }
 
+#name {
+	display: inline-block;
+	float: left;
+	vertical-align: middle;
+	position: absolute;
+	height: 100px;
+	padding: 10px;
+	padding-left: 40px;
+}
+
 #logo  {
 	display: inline-block;
 	float: left;

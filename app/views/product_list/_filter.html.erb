@@ -21,7 +21,7 @@
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Manufacturer:</label>
-                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
+                <%= form_tag :controller => 'products', :action => 'index', :method => 'filter' do %>
 	                <select name="manufacturer" id="manufacturer" class="form-control" onchange="this.form.submit()">
 	                    <option value="1">Manufacturer 1</option>
 	                    <option value="2">Manufacturer 2</option>
