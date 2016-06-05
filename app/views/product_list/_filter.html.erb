@@ -48,7 +48,8 @@
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Average Review:</label>
                 <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
-	                <select name="review" id="review" class="form-control" onchange="this.form.submit()">
+	                <select name="ratingRange" id="ratingRange" class="form-control" onchange="this.form.submit()">
+	                    <option value="" disabled selected>Select Rating Range</option>
 	                    <option value="1">0-1</option>
 	                    <option value="2">1-2</option>
 	                    <option value="3">2-3</option>
