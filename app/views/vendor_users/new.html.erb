@@ -2,12 +2,13 @@
 <h1>Vendor Registration</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@vendor) do |f| %>
+    <%= form_for(@user) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 		<br>
-       <%= f.label :ein, "EIN" %>
-      <%= f.text_field :ein, class: 'form-control' %>
+
+    <%= f.select("organizationID", VendorOrganization.all.collect {|vo| [ vo.name, vo.id ] }, {prompt: 'Select Vendor'}, class: "form-control", onchange: "")%>  
+      
 		<br>
        <%= f.label :username %>
       <%= f.text_field :username, class: 'form-control' %>

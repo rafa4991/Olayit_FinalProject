@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 20160605211032) do
     t.string   "role"
     t.string   "telephone"
     t.integer  "organizationID"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
+    t.boolean  "admin",           default: false
   end
 
   add_index "clinical_users", ["email"], name: "index_clinical_users_on_email", unique: true
@@ -79,9 +80,10 @@ ActiveRecord::Schema.define(version: 20160605211032) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "password_digest"
+    t.boolean  "admin",           default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -103,9 +105,10 @@ ActiveRecord::Schema.define(version: 20160605211032) do
     t.string   "role"
     t.string   "telephone"
     t.integer  "organizationID"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
+    t.boolean  "admin",           default: false
   end
 
   add_index "vendor_users", ["email"], name: "index_vendor_users_on_email", unique: true
