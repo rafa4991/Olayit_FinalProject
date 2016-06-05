@@ -5,7 +5,7 @@ class VendorUsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def new
-    @vendor = VendorUser.new
+    @user = VendorUser.new
     
   end
 
@@ -47,7 +47,7 @@ class VendorUsersController < ApplicationController
   private
 
     def user_params
-      params.require(:vendor_user).permit(:name, :ein,:username,:role,:telephone,:email, :password,:password_confirmation)
+      params.require(:vendor_user).permit(:name, :organizationID,:username,:role,:telephone,:email, :password,:password_confirmation)
     end
 
     # Confirms a logged-in user.

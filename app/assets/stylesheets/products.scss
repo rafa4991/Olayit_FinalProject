@@ -2,19 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#prod_page {
+	width: 95%;
+	text-align: center;
+}
+
 #prod_img {
 	display: inline-block;
 	vertical-align: top;
 	text-align: right;
 }
 
-#prod_img img {
-}
-
 #prod_header {
 	display: inline-block;
 	float: right;
 	padding: 0px;
+	text-align: left;
+	margin: auto;
 }
 
 #prod_descript {
@@ -83,3 +87,9 @@
 .review_table td {
 	padding: 10px;
 }
+
+.center {
+	width: 100%;
+	margin: 0 auto;
+}
+	
