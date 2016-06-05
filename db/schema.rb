@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605211032) do
+ActiveRecord::Schema.define(version: 20160605234947) do
 
   create_table "clinical_organizations", force: :cascade do |t|
     t.string   "name"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20160605211032) do
     t.float    "price"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "SKU"
     t.string   "manufacturer"
     t.string   "features"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160605211032) do
     t.integer  "height"
     t.integer  "warranty"
     t.integer  "vendor_user_id"
+    t.integer  "vendor_organization_id"
   end
 
   create_table "reviews", force: :cascade do |t|
