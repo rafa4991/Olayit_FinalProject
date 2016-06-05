@@ -79,7 +79,8 @@ p8 = Product.create(name: "Telehealth and Mobile Health",
 					business, and healthcare.",  
 					image: "telehealthbook.jpg" , 
 					SKU: 3032936,
-					manufacturer: "CRC")
+					#manufacturer: "CRC")
+					)
 
 
 p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart", 
@@ -90,7 +91,16 @@ p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart",
 					Made in the USA by Ergotron.",  
 					image: "ergotron.jpg" , 
 					SKU: 1401404 ,
-					manufacturer: "Ergotron",
+					#manufacturer: "Ergotron",
 					height: 64,
 					depth: 24,
 					width: 26)
+
+
+v1 = VendorOrganization.create(name: "Ergotron"
+							   organizationID:
+							   address: )
+
+v2 = 
+
+v3 = 
