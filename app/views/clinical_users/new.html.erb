@@ -1,4 +1,8 @@
 <!-- users can't see menu while creating new account -->
+
+<!-- removed dropdown- need to add one that links to db 
+	maybe add separate login as an organization- for dropdown menu -->
+
 <% content_for :stylesheets do %>
   #user_menu {display: none}
 <% end %>
@@ -26,9 +30,11 @@
       <%= f.label :telephone, "Telephone" %>
       <%= f.text_field :telephone, class: 'form-control' %>
 		<br>
-      <%= f.label :organizationID, "Organization ID" %>
+
+		<%= f.label :organizationID, "Organization ID" %>
       <%= f.text_field :organizationID, class: 'form-control' %>
 		<br>
+		
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 		<br>

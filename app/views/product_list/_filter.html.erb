@@ -21,7 +21,7 @@
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Manufacturer:</label>
-                <%= form_tag :controller => 'products', :action => 'index', :method => 'filter' do %>
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
 	                <select name="manufacturer" id="manufacturer" class="form-control" onchange="this.form.submit()">
 	                    <option value="1">Manufacturer 1</option>
 	                    <option value="2">Manufacturer 2</option>
@@ -33,26 +33,23 @@
 	            <% end %>                           
             </div>
         </div>
+	    			
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Vendor:</label>
-                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
-	                <select name="vendor" id="vendor" class="form-control" onchange="this.form.submit()">
-	                    <option value="1">Vendor 1</option>
-	                    <option value="2">Vendor 2</option>
-	                    <option value="3">Vendor 3</option>
-	                    <option value="4">Vendor 4</option>
-	                    <option value="5">Vendor 5</option>
-	                    <option value="6">Vendor 6</option>
-	                </select>     
-	            <% end %>                           
+
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>   
+	                 <%= select("vendor", "id", VendorOrganization.all.collect {|vo| [ vo.name, vo.id ] }, {prompt: 'Select Vendor'}, class: "form-control", onchange: "this.form.submit()")%>   
+	            <% end %>                     
             </div>
         </div>
+        				
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Average Review:</label>
                 <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
-	                <select name="review" id="review" class="form-control" onchange="this.form.submit()">
+	                <select name="ratingRange" id="ratingRange" class="form-control" onchange="this.form.submit()">
+	                    <option value="" disabled selected>Select Rating Range</option>
 	                    <option value="1">0-1</option>
 	                    <option value="2">1-2</option>
 	                    <option value="3">2-3</option>

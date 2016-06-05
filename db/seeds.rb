@@ -96,3 +96,8 @@ p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart",
 					height: 64,
 					depth: 24,
 					width: 26)
+
+v1 = VendorOrganization.create(name: "Avteq", organizationID: 1, address: "123 S Someplace Ave")
+v2 = VendorOrganization.create(name: "Video Conference Tech", organizationID: 2, address: "456 N Otherplace Str")
+v3 = VendorOrganization.create(name: "Taylor & Francis", organizationID: 3, address: "789 W Whatplace Rd")
+

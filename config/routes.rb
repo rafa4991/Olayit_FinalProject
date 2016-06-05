@@ -28,7 +28,15 @@ Rails.application.routes.draw do
   get 'users/new'
 
   get 'home/index'
-
+  
+  get 'home/about'
+  
+  get '/about' => 'home#about'
+  
+  get 'home/privacy'
+  
+  get '/privacy' => 'home#privacy'
+  
   get 'home/new'
 
   get 'welcome/productpage'

@@ -12,31 +12,40 @@
                 <% rating = rating + review.rating %>
             <%end%>
         <% end %>
+        <% if count == 0 %>
+            <% ratingAvg = 0 %>
+        <% else %>
+            <% ratingAvg = rating/count %>
+        <%end%>
+    <% if ratingAvg >= @lowRating && ratingAvg <= @highRating %>
     <div class="col-sm-4 col-lg-4 col-md-6">
         <div class="thumbnail">
             
             <img src="<%= product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:150px;">
             <div class="caption">
-                <h5 align="center"><%= link_to product.name, product %></h5>
+                <h5 align="center"><span class = "prodName"><%= link_to product.name, product %></span></h5>
                 <h4> $<%= product.price %></h4>
                 <p><%= truncate(product.description, :length => 75) %></p>
                 
             </div>
-            <% if Favorite.where(userID: current_user.id, productID: product.id).present?%>
-                 <%= form_tag :controller => 'favorites', :action => 'index', :method => 'deleteFavorite' do %>
-                    <%= hidden_field_tag 'productID', "#{product.id}" %>
-                    <%= hidden_field_tag 'email', "#{current_user.email}"%>
-                    <button type="submit" class="btn btn-default filter-col" name="delete" id="delete">Remove from Favorites</button>  
-                <% end %>
-            <% else %>
-                <%= form_tag :controller => 'favorites', :action => 'index', :method => 'addFavorite' do %>
+            <% if !isvendor  %>
+                <% if Favorite.where(userID: current_user.id, productID: product.id).present?%>
+                     <%= form_tag :controller => 'favorites', :action => 'index', :method => 'deleteFavorite' do %>
                         <%= hidden_field_tag 'productID', "#{product.id}" %>
                         <%= hidden_field_tag 'email', "#{current_user.email}"%>
-                        <button type="submit" class="btn btn-default filter-col" name="add" id="add">Add to Favorites</button>  
+                        <button type="submit" class="btn btn-default filter-col" name="delete" id="delete">Remove from Favorites</button>  
+                    <% end %>
+                <% else %>
+                    <%= form_tag :controller => 'favorites', :action => 'index', :method => 'addFavorite' do %>
+                            <%= hidden_field_tag 'productID', "#{product.id}" %>
+                            <%= hidden_field_tag 'email', "#{current_user.email}"%>
+                            <button type="submit" class="btn btn-default filter-col" name="add" id="add">Add to Favorites</button>  
+                    <% end %>
                 <% end %>
             <% end %>
+
             
-            <a href="/compare/<%= product.id %>" type="submit" class="btn btn-default filter-col" >Add to Compare</a>
+            <a href="/compare/<%= product.id %>" type="submit" class="btn btn-default filter-col" onmouseover = "this.style.color='black'">Add to Compare</a>
 
 
 
@@ -44,11 +53,7 @@
             <div class="ratings">
                 <p class="pull-right"> <%= count %> reviews</p>
                 <p>
-                <% if count == 0 %>
-                    <% ratingAvg = 0 %>
-                <% else %>
-                    <% ratingAvg = rating/count %>
-                <%end%>
+                
 
                 <% if ratingAvg >= 1 && ratingAvg < 2 %>
                     <span class="glyphicon glyphicon-star"></span>
@@ -81,6 +86,7 @@
             </div>
         </div>
     </div>
+    <% end %>
   <% end %>
 </div>
 

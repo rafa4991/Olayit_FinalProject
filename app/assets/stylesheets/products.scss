@@ -2,3 +2,84 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#prod_img {
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+}
+
+#prod_img img {
+}
+
+#prod_header {
+	display: inline-block;
+	float: right;
+	padding: 0px;
+}
+
+#prod_descript {
+	display: inline-block;
+	width: 100%;
+}
+
+.hr_style {
+	border-color: gray;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+#prod_info {
+	width: 100%;
+}
+
+#prod_info td {
+	padding: 10px;
+}
+
+#prod_info span {
+	font-weight: bold;
+}
+
+#prod_descript p {
+	font-size: 16px
+}
+
+#prod_research a {
+	font-size: 16px;
+}
+
+#review {
+	display: block;
+	width: 80%;
+}
+
+#review p {
+	font-size: 16px;
+}
+
+#review h3 {
+	font-weight: 200;
+}
+
+#review_results {
+	display: block;
+}
+
+.review_table {
+	width: 100%;
+}
+
+.review_table th {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 5px;
+	border-bottom: 1px solid lightgray;
+}
+
+.review_table td {
+	padding: 10px;
+}

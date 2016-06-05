@@ -5,6 +5,10 @@ class ProductListController < ApplicationController
 		@products = Product.all
 		@reviews = Review.all
 
+		@highRating = 5
+		@lowRating = 0
+		
+
 		#Logic for the simple SearchBar
 		@order="asc"
 
@@ -44,7 +48,7 @@ class ProductListController < ApplicationController
     			#@products = Product.find(:all, :order => @sortcriteria, :limit => 100)
 	    end
 
-	    ##############SIDEBAR FILTER LOGIC######################
+	    ##############SIDEBAR FILTER LOGIC (start)######################
 
 	    if !params[:priceRange].nil?
 			priceRange = params[:priceRange].to_s
@@ -75,6 +79,28 @@ class ProductListController < ApplicationController
 			end
 			
 		end
+
+		if !params[:ratingRange].nil?
+			ratingRange = params[:ratingRange].to_s;
+			
+			if ratingRange == "1" 
+				@highRating = 1
+			elsif ratingRange == "2"
+				@highRating = 2
+				@lowRating = 1
+			elsif ratingRange == "3"
+				@highRating = 3
+				@lowRating = 2
+			elsif ratingRange == "4"
+				@highRating = 4
+				@lowRating = 3
+			else
+				@lowRating = 4
+			end
+
+
+		end
+		##############SIDEBAR FILTER LOGIC (end)######################
 
 	end
 
