@@ -1,6 +1,7 @@
 <!-- users can't see menu while creating new account -->
 
-<!-- maybe add separate login as an organization- for dropdown menu -->
+<!-- removed dropdown- need to add one that links to db 
+	maybe add separate login as an organization- for dropdown menu -->
 
 <% content_for :stylesheets do %>
   #user_menu {display: none}
@@ -29,23 +30,7 @@
       <%= f.label :telephone, "Telephone" %>
       <%= f.text_field :telephone, class: 'form-control' %>
 		<br>
-		
-		<!-- Dropdown list of orgs already registered- need to link to db and add default names to db -->
-		
-		<label class="filter-col" style="margin-right:0;" for="pref-perpage">Organization</label>
-            <%= form_tag :controller => 'products', :action => 'index', :method => 'filter' do %>
-	            <select name="organizationID" id="organizationID" class="form-control" onchange="this.form.submit()">
-					<option value="" disabled selected>Select Your Organization</option>
-	                <option value="1">Organization 1</option>
-	                <option value="2">Organization 2</option>
-	                <option value="3">Organization 3</option>
-	                <option value="4">Organization 4</option>
-	                <option value="5">Organization 5</option>
-	                <option value="6">Organization 6</option>
-	            </select>     
-	        <% end %>                           
-		<br>
-		
+
 		<%= f.label :organizationID, "Organization ID" %>
       <%= f.text_field :organizationID, class: 'form-control' %>
 		<br>
