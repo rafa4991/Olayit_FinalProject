@@ -5,7 +5,8 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 module Olayit
   class Application < Rails::Application
     #config.assets.paths << Rails.root.join("app", "assets", "fonts")

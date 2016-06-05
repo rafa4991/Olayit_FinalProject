@@ -16,6 +16,7 @@
 
 #p5 = Product.create(name: "Jackie Chan", price: 130000000.00, description: 'Im surprised there is even a price for this guy. He is a gift to the world; should be listed as "priceless".', image: "jackie.jpg")
 
+
 p6 = Product.create(name: "Imersify Mobile Telehealth Cart", 
 					price: 6999.99, 
 					description: "We designed this telehealth cart because our customers complained about how heavy, 
@@ -26,7 +27,7 @@ p6 = Product.create(name: "Imersify Mobile Telehealth Cart",
 					certified all in one PC’s, and are manufactured in the US of the highest materials available. 
 					Compact yet sturdy, the Imersify Cart is a cost effective all-in-one system that offers a powerful 
 					TelyCam 12x (plus 4 other camera options if you like)." , 
-					image: "telycart.jpg" , 
+					:image => open("app/assets/images/telycart.jpg") , 
 					SKU: 5840486 ,
 					manufacturer: "Imersify",
 					height: 54,
@@ -55,7 +56,7 @@ p7 = Product.create(name: "Avteq Telemedicine Mobile Medical Cart",
 					Height to Camera Shelf: Adjusts 66-74 H
 					Drawer Interior: 13.25 W x 11.5 D
 					Keyboard Tray: 18.5 W x 8 D",
- 					image: "imersifycart.jpg" , 
+ 					image: open("app/assets/images/imersifycart.jpg") , 
  					SKU: 1230586,
  					manufacturer: "Avteq",
 					height: 72,
@@ -77,7 +78,7 @@ p8 = Product.create(name: "Telehealth and Mobile Health",
 					bridges the gap between scientists, engineers, and medical professionals by creating synergy 
 					in the related fields of biomedical engineering, information and communication technology, 
 					business, and healthcare.",  
-					image: "telehealthbook.jpg" , 
+					image: open("app/assets/images/telehealthbook.jpg") , 
 					SKU: 3032936,
 					#manufacturer: "CRC")
 					)
@@ -89,18 +90,9 @@ p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart",
 					videoconferencing with the benefits of a StyleView medical cart. Backed by our years of expertise 
 					and service, you can confidently build a telemedicine platform that matches your needs and budget.
 					Made in the USA by Ergotron.",  
-					image: "ergotron.jpg" , 
+					image: open("app/assets/images/ergotron.jpg") , 
 					SKU: 1401404 ,
 					#manufacturer: "Ergotron",
 					height: 64,
 					depth: 24,
 					width: 26)
-
-
-v1 = VendorOrganization.create(name: "Ergotron"
-							   organizationID:
-							   address: )
-
-v2 = 
-
-v3 = 
