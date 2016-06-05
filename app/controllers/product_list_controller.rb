@@ -44,7 +44,7 @@ class ProductListController < ApplicationController
     			#@products = Product.find(:all, :order => @sortcriteria, :limit => 100)
 	    end
 
-	    ##############SIDEBAR FILTER LOGIC######################
+	    ##############SIDEBAR FILTER LOGIC (start)######################
 
 	    if !params[:priceRange].nil?
 			priceRange = params[:priceRange].to_s
@@ -75,6 +75,11 @@ class ProductListController < ApplicationController
 			end
 			
 		end
+
+		if !params[:rating].nil?
+			
+		end
+		##############SIDEBAR FILTER LOGIC (end)######################
 
 	end
 

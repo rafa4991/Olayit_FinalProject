@@ -33,21 +33,16 @@
 	            <% end %>                           
             </div>
         </div>
+	    			
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Vendor:</label>
-                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
-	                <select name="vendor" id="vendor" class="form-control" onchange="this.form.submit()">
-	                    <option value="1">Vender 1</option>
-	                    <option value="2">Vender 2</option>
-	                    <option value="3">Vender 3</option>
-	                    <option value="4">Vender 4</option>
-	                    <option value="5">Vender 5</option>
-	                    <option value="6">Vender 6</option>
-	                </select>     
+                <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>   
+	                 <%= select("vendor", "id", VendorOrganization.all.collect {|vo| [ vo.name, vo.id ] }, {prompt: 'Select Vendor'}, class: "form-control", onchange: "this.form.submit()")%>
 	            <% end %>                           
             </div>
         </div>
+        				
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Average Review:</label>
