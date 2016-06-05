@@ -37,9 +37,10 @@
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Vendor:</label>
+
                 <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>   
-	                 <%= select("vendor", "id", VendorOrganization.all.collect {|vo| [ vo.name, vo.id ] }, {prompt: 'Select Vendor'}, class: "form-control", onchange: "this.form.submit()")%>
-	            <% end %>                           
+	                 <%= select("vendor", "id", VendorOrganization.all.collect {|vo| [ vo.name, vo.id ] }, {prompt: 'Select Vendor'}, class: "form-control", onchange: "this.form.submit()")%>   
+	            <% end %>                     
             </div>
         </div>
         				

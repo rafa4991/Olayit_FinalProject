@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   get 'users/new'
 
   get 'home/index'
-
+  
+  get 'home/about'
+  
   get 'home/new'
 
   get 'welcome/productpage'

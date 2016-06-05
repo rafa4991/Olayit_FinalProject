@@ -1,108 +1,148 @@
+<div id = "prod_img">
+	<img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:400px;">
+</div>
 
-<div class="container">
-    <div class="col-xs-6"; style="text-align:right;">
-        <img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:400px;">
-         <table class="table">
-         <thead>
-            <th> Clinical Research </th>
-         </thead>
+<div id = "prod_header">
+	<h2><%= @product.name %></h2><br>
+	<%= link_to 'Add to Favorites', '#' %><br>
+	
+	<a href="/compare/<%= @product.id %>">Add to Compare</a>
+	<hr class = "hr_style">
+		
+	<table id = "prod_info">
+		<tr>
+            <td> <span> SKU: </span> </td>
+            <td><%= @product.SKU %></td>
+        </tr>
+        <tr>
+            <td> <span> Price: </span> </td>
+            <td> <%= @product.price %> </td>
+        </tr>
+		<tr>
+            <td> <span> Manufacturer: </span> </td>
+            <td> <%= @product.manufacturer %> 
+        </tr>
+        <tr>
+            <td> <span> Warranty: </span> </td>
+            <td> <%= @product.warranty %> </td> 
+        </tr>
+		
+        <% if !@product.height.blank? || !@product.height.blank? || !@product.width.blank? %>
+            <tr>
+                <td><span>Product Dimensions</span></td>
+            </tr>
+        <%end%>
+        
+		<% if !@product.height.blank? %>
+            <tr>
+                <td>&nbsp;&nbsp;Height: </td>
+                <td><%= @product.height %>"</td>
+            </tr>
+        <%end%>
+                
+        <% if !@product.depth.blank? %>
+            <tr>
+                <td>&nbsp;&nbsp;Depth: </td>
+                <td><%= @product.depth %>"</td>
+            </tr>
+        <%end%>
+                
+        <% if !@product.width.blank? %>
+            <tr>
+                <td>&nbsp;&nbsp;Width: </td>
+                <td><%= @product.width %>"</td>
+            </tr>
+        <%end%>
+    </table>
+	
+	<hr class = "hr_style">
+</div>
 
-         <tbody>
-            <td> Links and Further Research will go here </td>
-         </tbody>
-         </table>
-    </div>
 
-    <div class="col-xs-6">
-   
-            <table class="table">
-                <thead>  
-                    <th colspan="2"><%= @product.name %></th>
-                <tr>
-                    <th colspan="2"><%= link_to 'Add to Favorites', '#' %></th>
-                <tr>
-                    <th colspan="2"><a href="/compare/<%= @product.id %>">Add to Compare</a></th>
-                </tr>
-                </tr>
-                </thead>
+<div id = "prod_descript">
+	<br>
+        <h3> Product Description </h3><br>
+            <p><%= @product.description %></p>
+        <br> 
+        <h3> Product Features </h3>
+            <p><%= @product.features %> Product features go here.</p> 
+		<br>
+	<hr class = "hr_style">
+</div>
 
-                <tbody>
-                <tr>
-                    <td> <strong> SKU: </strong> </td>
-                    <td> <%= @product.SKU %> </td>
-                </tr>
-                <tr>
-                    <td> <strong> Price: </strong> </td>
-                    <td> <%= @product.price %> </td>
-                </tr>
+<div id = "prod_research">
+    <h3>Clinical Research </h3>
+		<ul>
+			<li><a href="#">Click here for further research!</a></li>
+			<li><a href="#">Click here for further research!</a></li>
+			<li><a href="#">Click here for further research!</a></li>
+		</ul>
+		<br><hr class = "hr_style">
+</div>
 
-                <tr>
-                    <td>  <strong> Product Description:</strong> </td>
-                    <td> <%= @product.description %> </td>
-                </tr>
+<div id = "review">  
+	<%= form_for(@review) do |f| %>
+        <% if @review.errors.any? %>
+            <div id="error_explanation">
+                <h3><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h3>
 
-                </tbody>
-            </table>
-    </div>
-
-    <div class="col-xs-12"; style="text-align:center;">
-       
-       
-       <%= form_for(@review) do |f| %>
-            <% if @review.errors.any? %>
-                 <div id="error_explanation">
-                     <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-                 <ul>
+                <ul>
                     <% @review.errors.full_messages.each do |message| %>
-                 <li><%= message %></li>
+					<li><%= message %></li>
                     <% end %>
                 </ul>
-                </div>
-        <% end %>
-
-     <div class="field">
-        <%= f.label :Leave_a_Review! %><br>
-        <%= f.text_area :content, class: 'form-control' %>
-    </div>
+			</div>
+		<% end %>
+			
+		<br></br>
+		<div class="field">
+			<h3><%= f.label :Leave_a_Review!, "Leave a Review!" %></h3>
+			<%= f.text_area :content, class: 'form-control' %>
+			<br>
+		</div>
     
-    <div class="field">
-        <%= f.label :rating %><br>
-        <%= f.number_field :rating, in: 1..5, class: 'form-control' %>
-    </div>
+		<div class="field">
+			<%= f.label :rating %><br>
+			<%= f.number_field :rating, in: 1..5, class: 'form-control' %>
+			<br>
+		</div>
 
-    <div class="field">
-        <%= f.label :product_id %><br>
-        <%= f.number_field :product_id, class: 'form-control' %>
-    </div>
+		<div class="field">
+			<%= f.label :product_id %><br>
+			<%= f.number_field :product_id, class: 'form-control' %>
+			<br>
+		</div>
     
-    <div class="actions">
-        <%= f.submit %>
-    </div>
+		<div class="actions">
+			<%= f.submit %>
+		</div>
     <% end %>
-
-    <div class="col-xs-12"; style="text-align:center;">
-         <% @reviews.each do |review| %>
-            <% if review.product_id == @product.id %>
-            <div class="col-xs-12"; style="text-align:center;">
-                <table class="table">
-                    <thead>
-                        <th style="text-align:center;"> Review</th>
-                        <th style="text-align:center;"> Rating</th>
-                    </thead>
-
-                    <tbody>
-                        <td> <%= review.content %></td>
-                         <td> <%= review.rating %></td>
-                    </tbody>  
-                </table>
-            </div>
-            <br>
-            </br>
-            <%end%>
-        <%end%> 
-    </div>
-
-
-    </div>
+	
 </div>
+	
+<div id = "review_results">	
+	<br><hr class = "hr_style"><br>
+		<h3>Product Reviews</h3><br>
+		<table class = "review_table">
+			<tr>
+                <th>Review</th>
+                <th>Rating</th>
+            </tr>
+
+	<% @reviews.each do |review| %>
+        <% if review.product_id == @product.id %>
+            
+			<tr>
+                <td> <%= review.content %></td>
+                <td> <%= review.rating %></td>
+            </tr>        
+            
+        <%end%>
+    <%end%> 
+  
+    </table>
+	<br>
+	<br>
+</div>
+
+
