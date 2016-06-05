@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a {
-	color: green;
-}
 
 a:hover {
-	background-color: red;
-	color: white;
+	color: #00A8E8;
+}
+
+.prodName {
+	font-size: 16px;
 }
