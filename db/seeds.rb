@@ -56,3 +56,18 @@ bridges the gap between scientists, engineers, and medical professionals by crea
 
 p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart", price: 4699.00, description: "Expand healthcare access through telehealth with this easy and affordable mobile solution, which combines the power to support onboard diagnostics and videoconferencing with the benefits of a StyleView medical cart. Backed by our years of expertise and service, you can confidently build a telemedicine platform that matches your needs and budget.
 Made in the USA by Ergotron.",  image: "ergotron.jpg" , SKU: 1401404)
+
+
+
+
+
+
+
+
+################# VENDOR ORGANIZATION SEEDS ##################################3
+v1 = VendorOrganization.create(name: "Avteq", organizationID: 1, address: "123 S Someplace Ave")
+v2 = VendorOrganization.create(name: "Video Conference Tech", organizationID: 2, address: "456 N Otherplace Str")
+v3 = VendorOrganization.create(name: "Taylor & Francis", organizationID: 3, address: "789 W Whatplace Rd")
+
+
+
