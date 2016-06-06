@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
 
+  get 'messages/create'
+
+  get 'conversations/index'
+
+  get 'conversations/show'
+
+  get 'conversations/new'
+
+  get 'conversations/create'
+
   # resources :favorites
   resources :reviews
   resources :products
   resources :users
   resources :clinical_users
   resources :vendor_users
+    resources :conversations do
+	resources :messages
+	end
 
   root 'userpaths#index'
   get 'vendor_users/new'
