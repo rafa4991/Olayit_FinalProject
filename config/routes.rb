@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get '/compare/clear' => 'compare#clearCompare'
   get '/compare/:id' => 'compare#add'
 
-
   get 'products/:id' => 'products#index'
 
   get 'clinical_users/new'

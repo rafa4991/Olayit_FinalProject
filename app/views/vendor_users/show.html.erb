@@ -1,11 +1,11 @@
 <% provide(:title, @vendor.name) %>
-<div class="row">
-  <aside class="col-md-12" >
-    <section class="user_info">
+<p id="notice"><%= notice %></p>
+
+<div class="main_content">
+    <div class"prod_page">
     	<h4> <strong> User Profile </strong></h4>
-       <table class="table" >
-              
-                <tbody>
+        <table class="table">                        
+
                 <tr>
                     <td> <strong> Name: </strong> </td>
                     <td><%= @vendor.name %> </td>
@@ -23,102 +23,29 @@
                 	<td> <strong> Username: </strong> </td>
                     <td><%= @vendor.username %> </td>
                 </tr>
-                 <tr>
-                	<td> <strong> EIN: </strong> </td>
-                    <td><%= @vendor.ein %> </td>
-                </tr>
+                 
                  <tr>
                 	<td> <strong> Role: </strong> </td>
                     <td><%= @vendor.role %> </td>
-                </tr>
-           
+                </tr> 
+
        </table>
-
-        <div class="row">
-    <% @vendor.products.each do |product| %>
-        
-        <% count = 0 %>
-        <% rating = 0 %>
-        <% ratingAvg = 0 %>
-
-        <% product.reviews.each do |review| %>
-            <% if review.product_id == product.id %>
-                <% count = count  + 1 %>
-                <% rating = rating + review.rating %>
-            <%end%>
-        <% end %>
-    <div class="col-sm-4 col-lg-4 col-md-6">
-        <div class="thumbnail">
-            
-            <img src="../../assets/<%= product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:150px;">
-            <div class="caption">
-                <h5 align="center"><%= link_to product.name, product %></h5>
-                <h4> $<%= product.price %></h4>
-                <p><%= truncate(product.description, :length => 75) %></p>
-                
-            </div>
-            <% if Favorite.where(userID: current_user.id, productID: product.id).present?%>
-                 <%= form_tag :controller => 'favorites', :action => 'index', :method => 'deleteFavorite' do %>
-                    <%= hidden_field_tag 'productID', "#{product.id}" %>
-                    <%= hidden_field_tag 'email', "#{current_user.email}"%>
-                    <button type="submit" class="btn btn-default filter-col" name="delete" id="delete">Remove from Favorites</button>  
-                <% end %>
-            <% else %>
-                <%= form_tag :controller => 'favorites', :action => 'index', :method => 'addFavorite' do %>
-                        <%= hidden_field_tag 'productID', "#{product.id}" %>
-                        <%= hidden_field_tag 'email', "#{current_user.email}"%>
-                        <button type="submit" class="btn btn-default filter-col" name="add" id="add">Add to Favorites</button>  
-                <% end %>
-            <% end %>
-            
-            <a href="/compare/<%= product.id %>" type="submit" class="btn btn-default filter-col" >Add to Compare</a>
-
-
-
-            <br>
-            <div class="ratings">
-                <p class="pull-right"> <%= count %> reviews</p>
-                <p>
-                <% if count == 0 %>
-                    <% ratingAvg = 0 %>
-                <% else %>
-                    <% ratingAvg = rating/count %>
-                <%end%>
-
-                <% if ratingAvg >= 1 && ratingAvg < 2 %>
-                    <span class="glyphicon glyphicon-star"></span>
-                  
-                <% elsif ratingAvg >= 2 && ratingAvg < 3 %>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    
-                <% elsif ratingAvg >= 3 && ratingAvg < 4 %>
-                   
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                
-                <% elsif ratingAvg >= 4 && ratingAvg < 5 %>
-
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                <% else %>
-                   
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                <% end %>
-                </p>
-            </div>
-        </div>
     </div>
-  <% end %>
+
+    <div class"prod_page">
+    <h4> <strong> Your Products </strong></h4>
+
+    <% if current_user.products.exists? %>
+        <% current_user.products.each do |product| %>
+            <%= link_to product.name, product %>
+            <td><%= link_to 'Click here to remove this product', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+        <% end %>
+    <% else %>
+        You have no products.
+    <% end %>
+
+   </div>    
 </div>
 
-    </section>
-  </aside>  
-</div> 
+    
