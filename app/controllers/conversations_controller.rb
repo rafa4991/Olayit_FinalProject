@@ -12,7 +12,12 @@ class ConversationsController < ApplicationController
   end
   
   def create
-	recipient=VendorUser.find(params[:user_id])
+	begin
+	recipient=ClinicalUser.find_by name: (params[:user_id])
+
+	rescue
+		recipient=VendorUser.find_by name:(params[:user_id])
+	end
 	receipt=current_user.send_message(recipient,params[:body],params[:subject])
 	redirect_to conversation_path(receipt.conversation)
 	
