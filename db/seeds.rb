@@ -99,5 +99,8 @@ p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart",
 
 v1 = VendorOrganization.create(name: "Avteq", organizationID: 1, address: "123 S Someplace Ave")
 v2 = VendorOrganization.create(name: "Video Conference Tech", organizationID: 2, address: "456 N Otherplace Str")
-v3 = VendorOrganization.create(name: "Taylor & Francis", organizationID: 3, address: "789 W Whatplace Rd")
+v3 = VendorOrganization.create(name: "CRC", organizationID: 4, address: "789 W Whatplace Rd")
+v3 = VendorOrganization.create(name: "Imersify", organizationID: 5, address: "712 W Elsewhere Rd")
+v3 = VendorOrganization.create(name: "Ergotron", organizationID: 6, address: "411 W NoWhere Rd")
+
 

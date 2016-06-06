@@ -5,6 +5,7 @@ class ProductListController < ApplicationController
 		@products = Product.all
 		@reviews = Review.all
 
+
 		@highRating = 5
 		@lowRating = 0
 		
@@ -50,6 +51,7 @@ class ProductListController < ApplicationController
 
 	    ##############SIDEBAR FILTER LOGIC (start)######################
 
+	    #Price Range Filter
 	    if !params[:priceRange].nil?
 			priceRange = params[:priceRange].to_s
 			high = 0
@@ -80,6 +82,18 @@ class ProductListController < ApplicationController
 			
 		end
 
+		#Vendor Organization Filter
+		if !params[:vendor].nil?
+			vendor = params[:vendor].to_s
+
+			
+			# @products = @products.where("vendor = ?", vendor)
+			
+			
+			
+		end
+
+		#Average Rating Filter 
 		if !params[:ratingRange].nil?
 			ratingRange = params[:ratingRange].to_s;
 			

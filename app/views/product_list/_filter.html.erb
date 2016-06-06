@@ -17,23 +17,16 @@
 	            <% end %>                           
             </div>
         </div>
-
+        <!--
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Manufacturer:</label>
                 <%= form_tag :controller => 'product_list', :action => 'index', :method => 'filter' do %>
-	                <select name="manufacturer" id="manufacturer" class="form-control" onchange="this.form.submit()">
-	                    <option value="1">Manufacturer 1</option>
-	                    <option value="2">Manufacturer 2</option>
-	                    <option value="3">Manufacturer 3</option>
-	                    <option value="4">Manufacturer 4</option>
-	                    <option value="5">Manufacturer 5</option>
-	                    <option value="6">Manufacturer 6</option>
-	                </select>     
+	                <%= select("Manufacturer", "id", Product.distinct(:manufacturer).collect {|p| [ p.manufacturer, p.manufacturer ] }, {prompt: 'Select Manufacturer'}, class: "form-control", onchange: "this.form.submit()")%>        
 	            <% end %>                           
             </div>
         </div>
-	    			
+	    -->	
         <div class="list-group-item">
 	    	<div class="form-group">
                 <label class="filter-col" style="margin-right:0;" for="pref-perpage">Vendor:</label>
