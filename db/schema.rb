@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160605234947) do
-
+ActiveRecord::Schema.define(version: 20160606045222) do
 
   create_table "clinical_organizations", force: :cascade do |t|
     t.string   "name"
@@ -101,7 +99,6 @@ ActiveRecord::Schema.define(version: 20160605234947) do
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
   create_table "products", force: :cascade do |t|
-    t.string   "vendorID"
     t.string   "name"
     t.string   "type"
     t.float    "price"
@@ -119,6 +116,8 @@ ActiveRecord::Schema.define(version: 20160605234947) do
     t.integer  "warranty"
     t.integer  "vendor_user_id"
     t.integer  "vendor_organization_id"
+    t.string   "productID"
+    t.integer  "vendorID"
   end
 
   create_table "reviews", force: :cascade do |t|

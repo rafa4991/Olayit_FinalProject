@@ -2,6 +2,7 @@
 <% if @compare.empty? %>
   <p>No products to compare</p>
 <% else %>
+
 <%= link_to "Empty Compare cart", compare_clear_path, data: { confirm: 'Are you sure?' }%>
 <% end %>
 <br><br><br>
