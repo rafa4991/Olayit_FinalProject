@@ -1,19 +1,21 @@
 <div id = "prod_page">
 
 <div id = "prod_img">
-	<img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:400px;">
+	<img src="<%= @product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:400px;">
+
 </div>
 
 <div id = "prod_header">
 	<h2><%= @product.name %></h2><br>
-		<button type="submit" class="btn btn-default filter-col" name="add" id="add">Add to Favorites</button> 
+		<%if isvendor %>
+			<!-- vendors don't see favorites -->
+		<%else%>
+			<button type="submit" class="btn btn-default filter-col" name="add" id="add">Add to Favorites</button>
+		<%end%>
 		&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="/compare/<%= @product.id %>" type="submit" class="btn btn-default filter-col" onmouseover = "this.style.color='black'">Add to Compare</a>
 	<hr class = "hr_style">
 	 
-	
-	
-	
 	<table id = "prod_info">
 		<tr>
             <td> <span> SKU: </span> </td>
@@ -23,11 +25,12 @@
             <td> <span> Price: </span> </td>
             <td> <%= @product.price %> </td>
         </tr>
-        <tr>
-            <td> <span> Warranty: </span> </td>
-            <td> <%= @product.warranty %> </td> 
-        </tr>
-		
+		<% if !@product.warranty.blank? %>
+			<tr>
+				<td> <span> Warranty: </span> </td>
+				<td> <%= @product.warranty %> </td> 
+			</tr>
+		<%end%>
         <% if !@product.height.blank? || !@product.height.blank? || !@product.width.blank? %>
             <tr>
                 <td><span>Product Dimensions</span></td>
@@ -124,22 +127,25 @@
 <div id = "review_results">	
 	<br><hr class = "hr_style"><br>
 		<h3>Product Reviews</h3><br>
-		<table class = "review_table">
-			<tr>
-                <th>Review</th>
-                <th>Rating</th>
-            </tr>
-
-	<% @reviews.each do |review| %>
-        <% if review.product_id == @product.id %>
-            
-			<tr>
-                <td> <%= review.content %></td>
-                <td> <%= review.rating %></td>
-            </tr>        
-            
-        <%end%>
-    <%end%> 
+		<% if @reviews.product.length > 0 %>
+			<table class = "review_table">
+				<tr>
+					<th>Review</th>
+					<th>Rating</th>
+				</tr>
+			<% @reviews.each do |review| %>
+				<% if review.product_id == @product.id %>
+					
+					<tr>
+						<td> <%= review.content %></td>
+						<td> <%= review.rating %></td>
+					</tr>        	
+				<%end%>
+			<%end%> 
+		<% else %>
+			<p>There are no reviews at this time.</p>
+		<%end%>
+    
   
     </table>
 	<br>
