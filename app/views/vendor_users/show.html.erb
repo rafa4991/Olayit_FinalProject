@@ -3,7 +3,7 @@
 
 <div class="main_content">
     <div class"prod_page">
-    	<h4> <strong> User Profile </strong></h4>
+    	<h3> <strong> User Profile </strong></h3><br>
         <table class="table">                        
 
                 <tr>
@@ -30,21 +30,24 @@
                 </tr> 
 
        </table>
-    </div>
-
-    <div class"prod_page">
+<br>
     <h4> <strong> Your Products </strong></h4>
 
     <% if current_user.products.exists? %>
-        <% current_user.products.each do |product| %>
-            <%= link_to product.name, product %>
-            <td><%= link_to 'Click here to remove this product', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </td>
-        <% end %>
+		<table id = "prod_table">
+			<% current_user.products.each do |product| %>
+				<tr><td><%= link_to product.name, product %></td>
+			
+					<td><%= link_to 'Click here to remove this product', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		
+				</tr>
+				<% end %>
+		</table>
+
+			
     <% else %>
         You have no products.
     <% end %>
-
    </div>    
 </div>
 
