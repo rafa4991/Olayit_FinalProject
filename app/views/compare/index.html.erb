@@ -3,7 +3,7 @@
   <p>No products to compare</p>
 <% else %>
 
-<%= link_to "Empty Compare cart", compare_clear_path, data: { confirm: 'Are you sure?' }%>
+<%= link_to "Empty Compare Cart", compare_clear_path, data: { confirm: 'Are you sure?' }%>
 <% end %>
 <br><br><br>
 
@@ -11,15 +11,17 @@
 <!-- Accessing the compare session hash ["1",1], where "1" is the product id.
 -->
 
+<table id = "table_compare">
 <% @compare.each do |id| %>
   <% product = Product.find_by_id(id) %>
-  
-  <ul>
-
-    <img src="<%= product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:150px;">
-    <%= link_to product.name, product %>
-    
-
-  </ul>
+	<tr><td>
+		<img src="<%= product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:200px;">
+		</td>
+		<td><%= link_to product.name, product %></td>
+		<td><%= product.price %></td>
+		<td><%= product.description %></td>
+		
+	</tr>
 
 <% end %>
+</table>

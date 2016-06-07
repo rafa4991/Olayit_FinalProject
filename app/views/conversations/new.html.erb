@@ -5,14 +5,14 @@
 	<div>
 			<%= select_tag :user_id, options_from_collection_for_select(@recipients,:name, :name) %>
 	</div>
-
+	<br>
 	<div>
 		<%= text_field_tag :subject,nil, placeholder: "Subject" %>
 	</div>
-	
+	<br>
 	<div>
 		<%= text_area_tag :body,nil, placeholder: "Message" %>
 	</div>
-	
+	<br>
 	<%= submit_tag %>
 <% end %>

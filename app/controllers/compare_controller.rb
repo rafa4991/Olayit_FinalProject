@@ -2,7 +2,7 @@ class CompareController < ApplicationController
 
    def add
     id = params[:id] 
-    compare[id] ? compare[id] = compare[id] + 1 : compare[id] = 1 
+    compare[id] ? compare[id] = compare[id] + 1 : compare[id] = id
     flash[:notice] = "Added to Compare"
     redirect_to :back
   end
