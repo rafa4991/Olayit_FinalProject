@@ -13,14 +13,16 @@
 </head>
 
 <body>
-	<%= render "layouts/header" %>
-	<%if logged_in? %>
-		<%= render "layouts/menu" %>
-	<%end %>
-	<div id = "main_content">
-		<%= yield %>
+	<div id = "content_container">
+		<%= render "layouts/header" %>
+		<%if logged_in? %>
+			<%= render "layouts/menu" %>
+		<%end %>
+		<div id = "main_content">
+			<%= yield %><br><br>
+		</div>
+		<%= render "layouts/footer" %>
 	</div>
-	<%= render "layouts/footer" %>
 </body>
 
 </html>

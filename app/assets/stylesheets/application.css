@@ -17,6 +17,7 @@
 html, body {
 	margin: 0px;
 	padding: 0px;
+	height: 100%;
 	font-family:Arial, sans-serif;
 }
  
@@ -41,6 +42,7 @@ tr, td {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1200px;
+	padding-bottom: 160px;
 }
 
 #main_content a {
@@ -149,17 +151,7 @@ tr, td {
 	text-decoration: none;
 	color: white;
 }
-/*
-#main_content a {
-	color: white;
-	color: #003349;
-}
 
-#main_content a:hover {
-	color: white;
-	background-color: #00A8E8;
-}
-*/
 #featured_products a {
 	color: black;
 }
@@ -170,15 +162,16 @@ tr, td {
 	padding: 20px;
 	padding-left: 40px;
 	text-align: center;
-	height: 150px;
+	height: 160px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 .footer_links {
 	font-size: 12px;
 	line-height: 25px;
 }
-
-
 
 #footer_col1 {
 	display: inline-block;
@@ -204,8 +197,6 @@ tr, td {
 	
 }
 
-
-
 #btnFix  a {
 	color: #333;
 	background-color: #fff;
@@ -225,4 +216,9 @@ tr, td {
 
 #table_compare td {
 	padding: 10px;
+}
+
+#content_container {
+	min-height: 100%;
+	position: relative;
 }

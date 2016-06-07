@@ -1,3 +1,11 @@
 // Place all the styles related to the Vendor_Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#prod_table {
+	width: 100%;
+}
+
+#prod_table td {
+	padding: 5px;
+}
