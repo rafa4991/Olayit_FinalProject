@@ -1,7 +1,9 @@
 <div id = "prod_page">
 
 <div id = "prod_img">
-	<img src="../../assets/<%= @product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:400px;">
+
+	<!--Images are housed in public/uploads/product/image and will correspond to each product so we don't need to have an absolute path just @product.image -->
+	<img src="<%= @product.image %>" alt="http://placehold.it/320x150" style="width:auto;height:400px;">
 </div>
 
 <div id = "prod_header">
@@ -74,9 +76,15 @@
 <div id = "prod_research">
     <h3>Clinical Research </h3>
 		<ul>
-			<li><a href="#">Click here for further research!</a></li>
-			<li><a href="#">Click here for further research!</a></li>
-			<li><a href="#">Click here for further research!</a></li>
+			<% if !@product.research.blank? %>
+			<li><a href="<%= @product.research %>">Click here for further research!</a></li>
+			<% end %>
+			<% if !@product.research2.blank? %>
+			<li><a href="<%= @product.research2 %>">Click here for further research!</a></li>
+			<% end %>
+			<% if !@product.research3.blank? %>
+			<li><a href="<%= @product.research3 %>">Click here for further research!</a></li>
+			<% end %>
 		</ul>
 		<br><hr class = "hr_style">
 </div>

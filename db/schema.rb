@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606045222) do
+ActiveRecord::Schema.define(version: 20160607024016) do
 
   create_table "clinical_organizations", force: :cascade do |t|
     t.string   "name"
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 20160606045222) do
     t.integer  "vendor_user_id"
     t.integer  "vendor_organization_id"
     t.integer  "vendorID"
+    t.string   "research2"
+    t.string   "research3"
   end
 
   create_table "reviews", force: :cascade do |t|

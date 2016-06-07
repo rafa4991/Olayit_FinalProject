@@ -29,7 +29,15 @@ p6 = Product.create(name: "Imersify Mobile Telehealth Cart",
 					TelyCam 12x (plus 4 other camera options if you like)." , 
 					:image => open("app/assets/images/telycart.jpg") , 
 					SKU: 5840486 ,
+					features: "Completely customizable mobile solution
+					Lightweight and compact all in one PC system
+					Integrates with many types of videoconferencing software including Zoom, Skype for Business, Vidyo,  and Webex Four different camera options including Pan, tilt, zoom video-conferencing cameras.
+					Medical quality components that meet strict requirements
+					Wireless or wired capabilities Options
+					Optional Battery back up available
+					Additional Shelves and accessories are available",
 					manufacturer: "Imersify",
+					research: "https://www.globalmed.com/products/telemedicine-carts/liteexam-mobile-telemedicine-station",
 					height: 54,
 					depth: 20,
 					width: 20)
@@ -58,7 +66,17 @@ p7 = Product.create(name: "Avteq Telemedicine Mobile Medical Cart",
 					Keyboard Tray: 18.5 W x 8 D",
  					image: open("app/assets/images/imersifycart.jpg") , 
  					SKU: 1230586,
+ 					features: "Supports a single display up to 32 inches
+					10RU storage cabinet
+					Integrated adjustable v/c camera platform
+					Front and rear adjustable-depth 19 inch rack mount bracket
+					Slide out drawer and keyboard tray
+					Gas lift for adjustable work surface & screen height
+					4″ dual-wheel casters, 2 with brakes
+					Tripp Lite Medical surge protector
+					Easy rollabout design",
  					manufacturer: "Avteq",
+ 					research: "http://avteq.net/wp-content/uploads/2014/02/TMP-800.pdf",
 					height: 72,
 					depth: 24,
 					width: 29)
@@ -92,6 +110,17 @@ p9 = Product.create(name: "Ergotron SV44-57T1-1 SV Telemedicine Cart",
 					Made in the USA by Ergotron.",  
 					image: open("app/assets/images/ergotron.jpg") , 
 					SKU: 1401404 ,
+					features: "Open architecture allows for the integration of most standard computer and mobile communications equipment
+					Enables remote delivery of specialized care and timely diagnostics
+					Configured to accommodate all your telemedicine equipment; large lower bin is perfect for storage of critical appliances
+					Lower bin includes three internal USB ports for connecting diagnostic devices and two additional external ports for other devices to be connected on the fly
+					Back-to-back monitor configuration provides separate viewing access for caregiver and patient
+					Mounts a video or web camera above the monitor, facing forward; camera travels with the monitor through its entire range of motion
+					Low configuration cost; ships fully assembled
+					Auto-locking drawers: Cart stores variable-length PINs for up to 1,000 users to allow electronically controlled access**
+					StyleView’s small footprint, with ultra-smooth gliding casters, travels easily across crowded carpet or hard surface floors and is perfect for space constrained areas
+					Keyboard pans fully side-to-side for closer access while interacting with clients",
+					research: "http://www.ergotron.com/tabid/65/PRDID/938/dnnprintmode/true/language/en-US/default.aspx?SkinSrc=%5BG%5DSkins%2F_default%2FNo+Skin&ContainerSrc=%5BG%5DContainers%2F_default%2FNo+Container",
 					#manufacturer: "Ergotron",
 					height: 64,
 					depth: 24,

@@ -40,8 +40,10 @@
 
                 </tbody>
             </table>
+
+      <!--Removing visibility of Edit Profile Button for demo -->
 			<span id = "btnFix">
-				<%= link_to "Edit Profile", edit_clinical_user_path(current_user), class: "btn btn-primary" %>
+				<% link_to "Edit Profile", edit_clinical_user_path(current_user), class: "btn btn-primary" %>
 			</span>
     </section>
   </aside>
