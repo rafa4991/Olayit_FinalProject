@@ -218,3 +218,11 @@ tr, td {
 	border-color: #adadad;
 }
 
+#table_compare {
+	width: 100%;
+	
+}
+
+#table_compare td {
+	padding: 10px;
+}
